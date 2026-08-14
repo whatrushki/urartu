@@ -4,7 +4,7 @@
     --color-bg-green: #6A814E;
     --color-bg-blue: #4E6881;
     --color-bg-tuff: #9E662D;
-    --color-bg-grey: #6B625A;
+    --color-bg-grey: #5e4f42;
     --color-bg-white: #FFF7E8;
 
     --color-fg-cherry-common: #FFF7F0;
@@ -80,4 +80,28 @@ html {
     .char-6 {
         color: var(--color-urartu-6);
     }
+}
+
+.grain-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.25;
+
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 800px 800px;
+
+    animation: grainShift 0.8s steps(3) infinite;
+}
+
+@keyframes grainShift {
+    0% { background-position: 0% 0%; }
+    33% { background-position: 15% 10%; }
+    66% { background-position: 30% 5%; }
+    100% { background-position: 0% 0%; }
 }
