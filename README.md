@@ -1,0 +1,1 @@
+<img src="https://github.com/whatrushki/urartu/blob/main/.github/assets/banner.png" alt="banner"/>
