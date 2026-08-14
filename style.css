@@ -1,0 +1,83 @@
+:root {
+    --color-bg-footer: #373737;
+    --color-bg-cherry: #983B58;
+    --color-bg-green: #6A814E;
+    --color-bg-blue: #4E6881;
+    --color-bg-tuff: #9E662D;
+    --color-bg-grey: #6B625A;
+    --color-bg-white: #FFF7E8;
+
+    --color-fg-cherry-common: #FFF7F0;
+    --color-fg-cherry-accent: #FFE8E8;
+
+    --color-fg-green-common: #E8E1D0;
+    --color-fg-green-accent: #E1D7B4;
+
+    --color-fg-blue-common: #FFF7E8;
+    --color-fg-blue-accent: #E1D7B4;
+    --color-fg-blue-quote: #E8FCFF;
+
+    --color-fg-tuff-common: #E8E1D0;
+    --color-fg-tuff-accent: #CFBC98;
+
+    --color-fg-grey-common: #E8E1D0;
+    --color-fg-grey-accent: #E1D7B4;
+
+    --color-fg-white-common: #413F3F;
+    --color-fg-white-accent: #9B632B;
+
+    --color-urartu-1: #E33737;
+    --color-urartu-2: #CD7F32;
+    --color-urartu-3: #A0C9FF;
+    --color-urartu-4: #87A6A1;
+    --color-urartu-5: #D7C14F;
+    --color-urartu-6: #87A6A1;
+
+    --font-nav: 'JetBrainsMono', serif;
+    --font-heading: 'Playfair', serif;
+    --font-body: 'Inter', sans-serif;
+    --font-quote: 'BadScript', sans-serif;
+    --font-quote-armenian: 'NotoSerifArmenian', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+    background-color: var(--color-bg-white);
+}
+
+.urartu {
+    text-transform: uppercase;
+    line-height: 0.8;
+
+    .char-0 {}
+
+    .char-1 {
+        color: var(--color-urartu-1);
+    }
+
+    .char-2 {
+        color: var(--color-urartu-2);
+    }
+
+    .char-3 {
+        color: var(--color-urartu-3);
+    }
+
+    .char-4 {
+        color: var(--color-urartu-4);
+    }
+
+    .char-5 {
+        color: var(--color-urartu-5);
+    }
+
+    .char-6 {
+        color: var(--color-urartu-6);
+    }
+}

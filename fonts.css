@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Playfair'; /* Имя шрифта */
+  src: url('./assets/fonts/Playfair.ttf') format('truetype');
+  font-weight: normal; /* Вес шрифта (обычный) */
+  font-style: normal; /* Стиль (обычный) */
+  font-display: swap; /* Стратегия отображения при загрузке */
+}
+
+@font-face {
+  font-family: 'JetBrainsMono'; 
+  src: url('./assets/fonts/JetBrainsMono.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; 
+}
+
+@font-face {
+  font-family: 'BadScript'; 
+  src: url('./assets/fonts/BadScript.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; 
+}
+
+@font-face {
+  font-family: 'NotoSerifArmenian'; 
+  src: url('./assets/fonts/NotoSerifArmenian.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; 
+}

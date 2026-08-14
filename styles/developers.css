@@ -1,0 +1,134 @@
+#developers {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-bg-cherry);
+    overflow: hidden;
+}
+
+.developers__separator {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    height: auto;
+    transform: translateY(-4vw);
+}
+
+.developers__inner {
+    margin-top: 12vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+}
+
+.developers__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.developers__title {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+
+    text-transform: uppercase;
+    width: max-content;
+    align-items: center;
+
+    font-family: var(--font-heading);
+    line-height: 0.6;
+    font-size: 6vw;
+    font-weight: 100;
+    color: var(--color-fg-cherry-common);
+}
+
+.developers__column {
+    width: 15vw;
+    height: auto;
+    object-fit: contain;
+    transform: translate(-1vw);
+}
+
+.developers__team-image {
+    width: 45vw;
+    height: auto;
+}
+
+.developers__subtitle {
+    align-self: flex-end;
+    font-family: var(--font-quote);
+    color: var(--color-fg-cherry-accent);
+    font-size: 3vw;
+    transform: rotate(-10deg) translate(4vw, -1vw);
+}
+
+.developers__socials {
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+    font-family: var(--font-quote);
+    transform: translateY(-2vw);
+}
+
+.developers__social-link {
+    color: var(--color-fg-cherry-common);
+    text-decoration: none;
+    font-size: 3vw;
+}
+
+.developers__decoration {
+    position: absolute;
+    width: 35vw;
+    height: auto;
+}
+
+.developers__decoration--flower-1 {
+    width: 25vw;
+    top: 22vw;
+    left: -2vw;
+}
+
+.developers__decoration--flower-2 {
+    bottom: -10vw;
+    right: -18vw;
+    width: 45vw;
+}
+
+.developers__decoration--flower-3 {
+    bottom: 8vw;
+    left: -14vw;
+    width: 35vw;
+}
+
+.developers__decoration--flower-4 {
+    top: 24vw;
+    right: -14vw;
+    width: 40vw;
+}
+
+.developers__footer {
+    width: 100%;
+    background-color: var(--color-bg-footer);
+    padding-top: 2vw;
+    padding-bottom: 1vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+    object-fit: contain;
+}
+
+.developers__footer--x {
+    height: 0.9vw;
+    width: auto;
+    margin-bottom: 0.4vw;
+}
+
+.developers__footer-icon {
+    height: 3.5vw;
+    width: auto;
+}

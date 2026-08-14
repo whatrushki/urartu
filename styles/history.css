@@ -1,0 +1,267 @@
+#history {
+    position: relative;
+    background-color: var(--color-bg-tuff);
+    width: 100%;
+
+    padding-top: 10vw;
+}
+
+.history__title {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+
+    font-family: var(--font-heading);
+    line-height: 0.6;
+    font-size: 6vw;
+    font-weight: 100;
+
+    :nth-child(1) {
+        color: var(--color-fg-tuff-common);
+    }
+
+    :nth-child(2) {
+        color: var(--color-fg-tuff-accent);
+    }
+}
+
+.history__title--first {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    margin-left: 6vw;
+    align-items: end;
+    text-transform: uppercase;
+
+    .history__title-line_2 {
+        transform: translateX(6vw);
+    }
+}
+
+.history__decoration {
+    position: absolute;
+    z-index: 2;
+}
+
+.history__date {
+    font-family: var(--font-heading);
+    line-height: 0.8;
+    font-size: 27vw;
+    font-weight: 600;
+}
+
+.history__date-text_block {
+    margin-top: 10vw;
+    color: var(--color-fg-tuff-common);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.history__date-text {
+    margin-top: 1vw;
+    font-family: var(--font-body);
+    font-size: 2vw;
+    text-align: center;
+}
+
+.history__decoration--ishhanac-1 {
+    top: 28vw;
+    transform: translateY(-4vw);
+    width: 50vw;
+    height: auto;
+    left: -0.5vw;
+}
+
+.history__decoration--ishhanac-2 {
+    top: 28vw;
+    transform: translateY(-4vw);
+    width: 50vw;
+    height: auto;
+    right: -0.5vw;
+}
+
+.history_church-block {
+    margin-top: 35vw;
+}
+
+.history__title--second {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    text-transform: uppercase;
+    margin-left: 18vw;
+    align-items: end;
+
+    .history__title-line_2 {
+        transform: translateX(10vw);
+    }
+}
+
+.history__decoration--pomegranate {
+    position: absolute;
+    top: -2vw;
+    right: -8vw;
+    width: 40vw;
+    height: auto;
+}
+
+.history__decoration--plant-1 {
+    z-index: 2;
+    left: -10vw;
+    top: 60vw;
+    width: 40vw;
+    height: auto;
+}
+
+.history__decoration--plant-2 {
+    z-index: 2;
+    right: -10vw;
+    top: 60vw;
+    width: 45vw;
+    height: auto;
+    transform: scaleX(-1);
+}
+
+.history__priest-block {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.history__image--church {
+    position: relative;
+    width: 110vw;
+    height: auto;
+    top: -8vw;
+    left: -40vw;
+}
+
+.history__priest-text_block {
+    position: relative;
+    right: 60vw;
+    display: flex;
+    flex-direction: column;
+    color: var(--color-fg-tuff-common);
+}
+
+.history__text--main {
+    margin-top: 20vw;
+    font-family: var(--font-body);
+    font-size: 2vw;
+    width: 40vw;
+    text-align: center;
+}
+
+.history__decoration--flower-6 {
+    position: absolute;
+    bottom: -6vw;
+    right: -20vw;
+    width: 60vw;
+    height: auto;
+    transform: scaleX(-1);
+}
+
+.history__priest-label {
+    font-family: var(--font-quote);
+    font-size: 3vw;
+    line-height: 0.4;
+
+}
+
+.history__priest-icon {
+    width: 12vw;
+    height: auto;
+}
+
+.history__priest-label-block {
+    margin-top: 3vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vw;
+}
+
+.history__title--third {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    text-transform: uppercase;
+    margin-left: 3vw;
+    align-items: center;
+    transform: translateX(20vw);
+
+    /* .history__title-line_2 {
+    } */
+}
+
+.history__decoration--flower-4 {
+    top: -24vw;
+    width: 35vw;
+    height: auto;
+    left: -4vw;
+    transform: rotate(35deg);
+}
+
+.history__third-block {
+    position: relative;
+    margin-top: 10vw;
+}
+
+.history__decoration {
+    position: absolute;
+}
+
+.history__text--secondary {
+    text-align: left;
+    margin-top: 8vw;
+    margin-left: 4vw;
+    font-family: var(--font-body);
+    font-size: 2vw;
+    width: 40vw;
+    color: var(--color-fg-tuff-common);
+}
+
+.history__image--zvartnoc {
+    width: 110%;
+    height: auto;
+    transform: translateX(-6vw);
+}
+
+.history__image--alashkert {
+    width: 105%;
+    height: auto;
+    transform: translate(-2vw, -3vw);
+}
+
+.history__quote-block {
+    margin-top: -8vw;
+    position: relative;
+    transform: translateY(8vw);
+}
+
+.history__quote-wrapper {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    /* gap: 2vw; */
+    color: var(--color-fg-tuff-common);
+}
+
+.history__quote-armenian {
+    font-family: var(--font-quote-armenian);
+    white-space: nowrap;
+    font-size: 4vw;
+    transform: translateX(-1vw);
+}
+
+.history__quote-translation {
+    font-family: var(--font-quote);
+    font-size: 3vw;
+}
