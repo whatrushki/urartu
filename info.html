@@ -1,82 +1,152 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Наши филиалы</title>
     <!-- Подключаем стили (вставим ниже) -->
-    <link rel="stylesheet" href="styles/filials.css">
-    <link rel="stylesheet" href="styles/director.css">
+    <link rel="stylesheet" href="./styles/fonts.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/filials.css">
+    <link rel="stylesheet" href="./styles/contacts.css">
 </head>
+
 <body>
+    <div class="grain-overlay"></div>
+    <!-- Блок: filials -->
+    <section id="filials">
+        <!-- ===== ДЕКОРАТИВНЫЕ ГРАНАТЫ ===== -->
+        <img class="filials__decoration filials__decoration--pomegranate-1" src="./assets/images/pomegranate-1.png"
+            alt="Гранат">
+        <img class="filials__decoration filials__decoration--pomegranate-2" src="./assets/images/pomegranate-2.png"
+            alt="Гранат">
 
-    <!-- Блок: filials-section -->
-    <section class="filials-section">
-        
-        <!-- Заголовок блока -->
-        <div class="filials-section__header">
-            <h2 class="filials-section__title">
-                <span class="filials-section__title-part">Наши</span><br>
-                <span class="filials-section__title-part filials-section__title-part--brown">Филиалы</span>
-            </h2>
-        </div>
+        <div class="filials__content">
+            <!-- Заголовок блока -->
+            <div class="filials-section__header">
+                <h2 class="filials-section__title">
+                    <span class="filials-section__title-part">Наши</span>
+                    <span class="filials-section__title-part">Филиалы</span>
+                </h2>
 
-        <!-- Блок групп (элемент основного блока, но лучше сделать вложенным блоком, если сложный) -->
-        <div class="filials-section__groups">
-            <div class="filials-section__group-item">
-                <span class="filials-section__group-dot filials-section__group-dot--red"></span>
-                <span class="filials-section__group-age">(14+)</span>
-                <span class="filials-section__group-name">старшая</span>
-            </div>
-            <div class="filials-section__group-item">
-                <span class="filials-section__group-dot filials-section__group-dot--yellow"></span>
-                <span class="filials-section__group-age">(9-13)</span>
-                <span class="filials-section__group-name">средняя</span>
-            </div>
-            <div class="filials-section__group-item">
-                <span class="filials-section__group-dot filials-section__group-dot--green"></span>
-                <span class="filials-section__group-age">(7-9)</span>
-                <span class="filials-section__group-name">младшая</span>
-            </div>
-        </div>
-
-        <!-- Блок списка филиалов -->
-        <div class="filials-section__cards">
-            
-            <div class="filials-section__card">
-                <div class="filials-section__card-map filials-section__card-map--color-1"></div>
-                <div class="filials-section__card-address">бул. Измайловский 4,<br>школа №75</div>
-                <div class="filials-section__card-schedule">Вторник | Четверг</div>
+                <!-- Блок групп (элемент основного блока, но лучше сделать вложенным блоком, если сложный) -->
+                <div class="filials-section__groups">
+                    <div class="filials-section__group-item">
+                        <span class="filials-section__group-dot red"></span>
+                        <span class="filials-section__group-age">(14+)</span>
+                        <span class="filials-section__group-name">старшая</span>
+                    </div>
+                    <div class="filials-section__group-item">
+                        <span class="filials-section__group-dot yellow"></span>
+                        <span class="filials-section__group-age">(9-13)</span>
+                        <span class="filials-section__group-name">средняя</span>
+                    </div>
+                    <div class="filials-section__group-item">
+                        <span class="filials-section__group-dot green"></span>
+                        <span class="filials-section__group-age">(7-9)</span>
+                        <span class="filials-section__group-name">младшая</span>
+                    </div>
+                </div>
             </div>
 
-            <div class="filials-section__card">
-                <div class="filials-section__card-map filials-section__card-map--color-2"></div>
-                <div class="filials-section__card-address">бул. Измайловский 4,<br>школа №75</div>
-                <div class="filials-section__card-schedule">Вторник | Четверг</div>
-            </div>
+            <!-- Блок списка филиалов -->
+            <div class="filials-section__cards">
 
-            <div class="filials-section__card">
-                <div class="filials-section__card-map filials-section__card-map--color-3"></div>
-                <div class="filials-section__card-address">бул. Измайловский 4,<br>школа №75</div>
-                <div class="filials-section__card-schedule">Вторник | Четверг</div>
-            </div>
+                <div class="filials-section__card">
+                    <div class="filials-section__card-map filials-section__card-map--color-1">
+                        <a href="https://yandex.ru/maps/?um=constructor%3Aece54fbc80fcc3bd7a28978d5a01cb16ceb60d30ceb579a1d64f8fab81e5902e&amp;source=constructorStatic"
+                            target="_blank"><img
+                                src="https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3Aece54fbc80fcc3bd7a28978d5a01cb16ceb60d30ceb579a1d64f8fab81e5902e&amp;width=350&amp;height=200&amp;lang=ru_RU"
+                                alt="" style="border: 0;" /></a>
+                    </div>
+                    <div class="filials-section__card-address"><b>Таганрогская 161,<br>Дом Офицеров</b></div>
+                    <div class="filials-section__card-schedule">Суббота / Воскресенье </div>
+                    <div class="filials-section__card-colors__wrapper">
+                        <div class="filials-section__card-color red"></div>
+                        <div class="filials-section__card-color yellow"></div>
+                        <div class="filials-section__card-color green"></div>
+                    </div>
+                </div>
 
+                <div class="filials-section__card">
+                    <div class="filials-section__card-map filials-section__card-map--color-2"><a
+                            href="https://yandex.ru/maps/?um=constructor%3A6dc34ad125ba02202c4a61613260cb11fdbab40c1a2d60afd7fc7b18eebd1723&amp;source=constructorStatic"
+                            target="_blank"><img
+                                src="https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3A6dc34ad125ba02202c4a61613260cb11fdbab40c1a2d60afd7fc7b18eebd1723&amp;width=350&amp;height=200&amp;lang=ru_RU"
+                                alt="" style="border: 0;" /></a></div>
+                    <div class="filials-section__card-address"><b>Измайловский 4,<br>Школа №75</b></div>
+                    <div class="filials-section__card-schedule">Вторник / Четверг</div>
+                    <div class="filials-section__card-colors__wrapper">
+                        <div class="filials-section__card-color yellow"></div>
+                        <div class="filials-section__card-color green"></div>
+                    </div>
+                </div>
+
+                <div class="filials-section__card">
+                    <div class="filials-section__card-map filials-section__card-map--color-3"><a
+                            href="https://yandex.ru/maps/?um=constructor%3Add82e42ed9932e65891b05e396d4c0421c9d9c8c8791d399bacf73d52fa6602b&amp;source=constructorStatic"
+                            target="_blank"><img
+                                src="https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3Add82e42ed9932e65891b05e396d4c0421c9d9c8c8791d399bacf73d52fa6602b&amp;width=350&amp;height=200&amp;lang=ru_RU"
+                                alt="" style="border: 0;" /></a></div>
+                    <div class="filials-section__card-address"><b>Шаумяна 94,<br>Дом культуры</b></div>
+                    <div class="filials-section__card-schedule">Пятница / Воскресенье</div>
+                    <div class="filials-section__card-colors__wrapper">
+                        <div class="filials-section__card-color green"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    <section id="contacts">;
-<!-- ===== ДЕКОРАТИВНЫЕ ОБЛАКА ===== -->
-            <div class="contacts__clouds">
-                <img class="director__cloud--backgorund" src="./assets/images/white-clouds-background.svg" alt="">
-                <img class="director__cloud director__cloud--1" src="./assets/images/cloud.png" alt="Облако">
-                <img class="director__cloud director__cloud--2" src="./assets/images/cloud.png" alt="Облако">
-                <img class="director__cloud director__cloud--3" src="./assets/images/cloud.png" alt="Облако">
-                <img class="director__cloud director__cloud--4" src="./assets/images/cloud.png" alt="Облако">
-                <img class="director__cloud director__cloud--5" src="./assets/images/cloud.png" alt="Облако">
-                <img class="director__cloud director__cloud--6" src="./assets/images/cloud.png" alt="Облако">
-                <img class="director__cloud director__cloud--7" src="./assets/images/cloud.png" alt="Облако">
+    <section id="contacts">
+        <!-- ===== ДЕКОРАТИВНЫЕ ОБЛАКА ===== -->
+        <div class="contacts__clouds">
+            <img class="contacts__cloud--backgorund" src="./assets/images/white-clouds-background.svg" alt="">
+            <img class="contacts__cloud contacts__cloud--1" src="./assets/images/cloud.png" alt="Облако">
+            <img class="contacts__cloud contacts__cloud--2" src="./assets/images/cloud.png" alt="Облако">
+            <img class="contacts__cloud contacts__cloud--3" src="./assets/images/cloud.png" alt="Облако">
+            <img class="contacts__cloud contacts__cloud--4" src="./assets/images/cloud.png" alt="Облако">
+            <img class="contacts__cloud contacts__cloud--5" src="./assets/images/cloud.png" alt="Облако">
+            <img class="contacts__cloud contacts__cloud--6" src="./assets/images/cloud.png" alt="Облако">
+            <img class="contacts__cloud contacts__cloud--7" src="./assets/images/cloud.png" alt="Облако">
+        </div>
+
+        <!-- Фоновые декорации -->
+        <div class="footer__stars" src="./assets/images/stars.png" alt="Звёзды"></div>
+
+        <!-- Блок с контактами -->
+        <div class="footer__contacts">
+            <a href="tel:+7(988)257-19-29" class="footer__cta-button">
+                <img src="./assets/images/phone.svg" class="footer__cta-icon">
+                <span class="footer__cta-text">Связаться с нами</span>
+            </a>
+
+            <!-- Социальные сети -->
+            <div class="footer__socials">
+                <a href="https://www.instagram.com/ensemble__urartu" class="footer__social-link" aria-label="Instagram">
+                    <img src="./assets/images/instagram.svg" alt="Instagram">
+                </a>
+                <a href="https://t.me/urartustsil" class="footer__social-link" aria-label="Telegram">
+                    <img src="./assets/images/telegram.svg" alt="Telegram">
+                </a>
+                <a href="#" class="footer__social-link footer__social-link-tiktok" aria-label="TikTok">
+                    <img src="./assets/images/tiktok.svg" alt="TikTok">
+                </a>
+                <a href="https://ru.pinterest.com/ensemble_urartu" class="footer__social-link" aria-label="Pinterest">
+                    <img src="./assets/images/pinterest.svg" alt="Pinterest">
+                </a>
             </div>
+        </div>
 
+        <!-- Основное содержимое -->
+        <div class="footer__inner">
+            <div class="footer__end-immages">
+                <img class="footer__moon" src="./assets/images/moon.png" alt="Луна">
+                <!-- Фото ансамбля -->
+                <img class="footer__ensemble-image" src="./assets/images/ensemble-urartu.png" alt="Ансамбль Урарту">
+            </div>
+        </div>
     </section>
-
 </body>
+
 </html>

@@ -3,14 +3,7 @@
     display: flex;
     flex-direction: column;
     background-color: var(--color-bg-cherry);
-}
-
-.developers__separator {
-    position: absolute;
-    z-index: 4;
-    width: 100%;
-    height: auto;
-    transform: translateY(-4vw);
+    overflow: hidden;
 }
 
 .developers__inner {
@@ -156,7 +149,7 @@
     align-items: center;
     border: 0.2vw solid white;
     color: white;
-    animation: all 3s ease;
+    transition: background-color 0.5s ease;
 }
 
 .developers__link:hover {

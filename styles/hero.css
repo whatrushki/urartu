@@ -16,16 +16,18 @@
 }
 
 .hero__main-image {
-    transform: translate(10px, 4.1vw);
+    transform: translate(1vw, 4.1vw);
     max-width: 111vw;
     height: auto;
 }
 
 .hero__header {
+    width: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    gap: 6vw;
+    padding: 0 4vw;
 }
 
 .hero__link {
@@ -46,6 +48,7 @@
     display: flex;
     flex-direction: column;
     align-items: end;
+    transform: translateY(3vw);
 }
 
 .hero__title {
@@ -76,24 +79,24 @@
 }
 
 .hero__decoration--wheat-1 {
-    top: -3%;
-    left: -140px;
-    width: 400px;
-    height: auto;
+    top: 10vh;
+    left: -18vh;
+    height: 100%;
+    width: auto;
 }
 
 .hero__decoration--wheat-2 {
-    top: 40%;
-    right: -140px;
+    top: 45vh;
+    right: -16vh;
     transform: translateY(-40%);
-    width: 300px;
-    height: auto;
+    height: 80%;
+    width: auto;
 }
 
 .hero__decoration--wheat-3 {
-    top: 50%;
-    right: -150px;
-    transform: translateY(-50%);
-    width: 350px;
-    height: auto;
+    top: 55vh;
+    right: -18vh;
+    transform: translateY(-50%) rotate(10deg);
+    height: 35%;
+    width: auto;
 }

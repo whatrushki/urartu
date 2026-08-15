@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .costumes__header {
@@ -41,7 +41,7 @@
 }
 
 .costumes__subtitle {
-    margin-top: 8vw;
+    margin-top: 4vw;
     font-family: var(--font-body);
     font-size: 2vw;
     max-width: 40vw;
@@ -53,15 +53,19 @@
     flex-wrap: nowrap;
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
+    scroll-snap-type: x mandatory;
 }
 
 .costume {
     width: 100vw;
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: center;
+    gap: 2vw;
+    scroll-snap-align: start;
+    padding: 0vw 10vw;
 }
 
 .costume__image {
@@ -122,6 +126,11 @@
     height: 13vw;
 }
 
+.costume__asset--half {
+    width: 14vw;
+    height: 8.5vw;
+}
+
 .costume__asset-label {
     font-family: var(--font-body);
     font-size: 2vw;
@@ -153,11 +162,12 @@
     align-items: center;
 }
 
-.costumes__decoration {
-    width: 35vw;
+.costumes__decoration--pomegranate {
+    width: 40vw;
     height: auto;
     margin-left: -5vw;
-    transform: scaleX(-1) rotate(-40deg) translateY(5vw);
+    transform: scaleX(-1) rotate(-30deg) translateY(5vw);
+    margin-top: -3vw;
 }
 
 .costumes__quote {
