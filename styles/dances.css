@@ -149,6 +149,18 @@
     flex-direction: column;
 }
 
+.dances__card-2 {
+    transform: translateX(-6vw);
+}
+
+.dances__card-image-1 {
+    transform: translateY(-1vw);
+}
+
+.dances__card-image-2 {
+    transform: scale(1.1) translateY(-2vw);
+}
+
 .dances__card-label-1 {
     position: absolute;
     transform: translate(3vw, 1vw);
@@ -156,7 +168,7 @@
 
 .dances__card-label-2 {
     position: absolute;
-    transform: translate(16vw, 1vw);
+    transform: translate(28vw, 1vw);
 }
 
 .dances__card-image {
