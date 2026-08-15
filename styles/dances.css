@@ -140,6 +140,7 @@
     font-size: 4vw;
     color: var(--color-fg-grey-accent);
     text-transform: uppercase;
+    margin-top: 2vw;
 }
 
 .dances__card {
