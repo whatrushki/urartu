@@ -16,7 +16,7 @@
 .footer__ensemble-image {
     width: 101%;
     height: auto;
-    transform: translate(-1vw, 2vw);
+    transform: translate(-1vw, 0.6vw);
 }
 
 .footer__moon {
