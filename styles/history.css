@@ -50,6 +50,10 @@
     font-weight: 600;
 }
 
+.history__date-block {
+    position: relative;
+}
+
 .history__date-text_block {
     margin-top: 10vw;
     color: var(--color-fg-tuff-common);
@@ -66,7 +70,6 @@
 }
 
 .history__decoration--ishhanac-1 {
-    top: 28vw;
     transform: translateY(-4vw);
     width: 50vw;
     height: auto;
@@ -74,7 +77,6 @@
 }
 
 .history__decoration--ishhanac-2 {
-    top: 28vw;
     transform: translateY(-4vw);
     width: 50vw;
     height: auto;
@@ -83,6 +85,7 @@
 
 .history_church-block {
     margin-top: 35vw;
+    position: relative;
 }
 
 .history__title--second {
@@ -110,7 +113,7 @@
 .history__decoration--plant-1 {
     z-index: 2;
     left: -10vw;
-    top: 60vw;
+    top: -30vw;
     width: 40vw;
     height: auto;
 }
@@ -118,7 +121,7 @@
 .history__decoration--plant-2 {
     z-index: 2;
     right: -10vw;
-    top: 60vw;
+    top: -37vw;
     width: 45vw;
     height: auto;
     transform: scaleX(-1);
@@ -168,7 +171,6 @@
     font-family: var(--font-quote);
     font-size: 3vw;
     line-height: 0.4;
-
 }
 
 .history__priest-icon {
@@ -262,4 +264,43 @@
 .history__quote-translation {
     font-family: var(--font-quote);
     font-size: 3vw;
+}
+
+@media (max-width: 650px) {
+    #history {
+        padding-top: 20vw;
+    }
+
+    .history__title--first {
+        font-size: 8vw;
+    }
+
+    .history__date {
+        font-size: 32vw;
+    }
+
+    .history__text {
+        font-size: 3vw;
+    }
+
+    .history__text--main {
+        width: 45vw;
+    }
+
+    .history__text--secondary {
+        width: 55vw;
+    }
+
+    .history__title--second {
+        font-size: 8vw;
+    }
+
+    .history__title--third {
+        font-size: 8vw;
+        transform: translateX(14vw);
+    }
+
+    .history__quote-translation {
+        font-size: 4vw;
+    }
 }

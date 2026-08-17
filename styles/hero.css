@@ -17,7 +17,7 @@
 
 .hero__main-image {
     transform: translate(1vw, 4.1vw);
-    max-width: 111vw;
+    width: 111vw;
     height: auto;
 }
 
@@ -99,4 +99,32 @@
     transform: translateY(-50%) rotate(10deg);
     height: 35%;
     width: auto;
+}
+
+@media (max-width: 650px) {
+    .hero__decoration {
+        display: none;
+    }
+
+    .hero__link {
+        display: none;
+    }
+
+    .hero__header {
+        justify-content: center;
+    }
+
+    .hero__title {
+        font-size: 18vw;
+    }
+
+    .hero__subtitle {
+        font-size: 4vw;
+    }
+
+    .hero__main-image {
+        width: 300vw;
+        height: auto;
+        transform: translate(70vw, 10vw);
+    }
 }

@@ -8,6 +8,35 @@
     justify-content: space-between;
 }
 
+.contacts-section__title {
+    display: none;
+    margin-top: 25vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+
+    text-transform: uppercase;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+
+    font-family: var(--font-heading);
+    line-height: 0.6;
+    font-size: 12vw;
+    font-weight: 100;
+
+    :nth-child(1) {
+        color: var(--color-fg-blue-common);
+
+    }
+
+    :nth-child(2) {
+        color: var(--color-fg-blue-accent);
+    }
+}
+
 .contacts__cloud--backgorund {
     width: 115%;
     transform: translateX(-7vw);
@@ -16,7 +45,7 @@
 .footer__ensemble-image {
     width: 101%;
     height: auto;
-    transform: translate(-1vw, 0.6vw);
+    transform: translate(-1vw, 0.9vw);
 }
 
 .footer__moon {
@@ -125,22 +154,32 @@
     justify-content: center;
     align-items: center;
     gap: 2vw;
-    padding: 1vw 4vw;
+    padding: 2vw 4vw;
     text-decoration: none;
     color: var(--color-bg-blue);
     background-color: var(--color-fg-blue-accent);
+    border: 0.3vw solid var(--color-fg-blue-accent);
     border-radius: 2vw;
-
-    font-size: 2.5vw;
+    transition: all 0.3s ease;
+    font-size: 3vw;
     font-family: var(--font-body);
     text-transform: uppercase;
     font-weight: 500;
 
-
-    img {
-        height: 4vw;
+    svg {
+        height: 3.5vw;
         width: auto;
         object-fit: contain;
+        color: var(--color-bg-blue);
+    }
+}
+
+.footer__cta-button:hover {
+    color: var(--color-fg-blue-accent);
+    background-color: transparent;
+
+    svg {
+        color: var(--color-fg-blue-accent);
     }
 }
 
@@ -148,13 +187,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 7vw;
+    width: 8vw;
     aspect-ratio: 1;
     background-color: var(--color-fg-blue-common);
     border-radius: 2vw;
 
     img {
-        width: 4vw;
+        width: 5vw;
         height: auto;
         max-height: 6vw;
         object-fit: contain;
@@ -163,7 +202,44 @@
 
 .footer__social-link-tiktok {
     img {
-        height: 4vw;
+        height: 5vw;
         width: auto;
+    }
+}
+
+@media (max-width: 650px) {
+    .contacts-section__title {
+        display: flex;
+    }
+
+    .footer__contacts {
+        gap: 2vw;
+    }
+
+    .footer__cta-button {
+        width: 65vw;
+        height: 10vw;
+        gap: 3vw;
+        padding: 2vw 4vw;
+
+        font-size: 4vw;
+
+        img {
+            height: 5vw;
+        }
+    }
+
+    .footer__social-link {
+        width: 12vw;
+
+        img {
+            width: 8vw;
+        }
+    }
+
+    .footer__social-link-tiktok {
+        img {
+            height: 8vw;
+        }
     }
 }

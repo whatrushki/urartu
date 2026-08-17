@@ -158,7 +158,7 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    margin-right: 4vw;
+    padding-right: 4vw;
     align-items: center;
 }
 
@@ -173,8 +173,84 @@
 .costumes__quote {
     font-family: var(--font-quote);
     color: var(--color-fg-white-common);
-    font-size: 2.2vw;
+    font-size: 2.8vw;
     text-align: center;
     line-height: 0.9;
     text-align: end;
+}
+
+@media (max-width: 650px) {
+    .costumes__header {
+        margin-top: 10vw;
+    }
+
+    .costumes__title {
+        font-size: 8vw;
+    }
+
+    .costumes__subtitle {
+        margin-top: 0;
+        font-size: 2.8vw;
+    }
+
+    .costumes__list {
+        margin-top: 12vw;
+    }
+
+    .costumes__description {
+        margin-top: 2vw;
+    }
+
+    .costume {
+        flex-direction: column;
+        align-items: center;
+        gap: 4vw;
+    }
+
+    .costume__image {
+        width: 100vw;
+        height: 65vw;
+    }
+
+    .costume__details {
+        width: 100vw;
+        align-items: center;
+    }
+
+    .costume__category {
+        width: min-content;
+        align-self: auto;
+    }
+
+    .costume__asset {
+        border-radius: 2vw;
+    }
+
+    .costume__asset--single {
+        width: 21vw;
+        height: 27vw;
+    }
+
+    .costume__asset--upper {
+        width: 21vw;
+        height: 6vw;
+    }
+
+    .costume__asset--bottom {
+        width: 21vw;
+        height: 19.5vw;
+    }
+
+    .costume__asset--half {
+        width: 21vw;
+        height: 12.7vw;
+    }
+
+    .costume__asset-label {
+        font-size: 2.8vw;
+    }
+
+    .costume__category {
+        font-size: 3.8vw;
+    }
 }

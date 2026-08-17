@@ -76,6 +76,12 @@
     gap: 2vw;
 }
 
+.director__epigraph {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+}
+
 .director__name {
     font-family: var(--font-heading);
     font-size: 4vw;
@@ -172,4 +178,129 @@
 .director__cloud--7 {
     left: -24vw;
     bottom: -10vw;
+}
+
+.director__image-flower {
+    display: none;
+}
+
+.director__image-wrapper {
+    position: relative;
+}
+
+.director__info-wrapper {
+    display: flex;
+    flex-direction: column;
+    /* gap: 1vw; */
+}
+
+.director__text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+}
+
+.director__image--mobile {
+    display: none;
+}
+
+@media (max-width: 650px) {
+    .director__main {
+        margin-top: 12vw;
+        flex-direction: column;
+        align-items: center;
+        gap: 8vw;
+        padding-left: 4vw;
+        padding-right: 2vw;
+    }
+
+    .director__title {
+        font-size: 8vw;
+    }
+
+    .director__decoration--flower-1 {
+        top: 20vw;
+        left: -10vw;
+        width: 45vw;
+        transform: rotate(-20deg);
+    }
+
+    .director__image {
+        width: 50vw;
+        /* margin-top: 30vw; */
+        /* margin-right: -4vw; */
+    }
+
+    .director {
+        align-items: center;
+    }
+
+    .director__bio {
+        margin-top: 0;
+        text-align: center;
+        width: 100%;
+        max-width: none;
+        gap: 8vw;
+        justify-content: space-between;
+    }
+
+    .director__epigraph {
+        display: flex;
+        flex-direction: column;
+        gap: 1vw;
+        align-items: end;
+        margin-right: 2vw;
+    }
+
+    .director__name {
+        font-size: 6vw;
+        align-self: flex-end;
+        text-align: end;
+    }
+
+    .director__quote {
+        font-size: 4vw;
+        text-align: right;
+        margin-left: 12vw;
+        max-width: 65vw;
+    }
+
+    .director__text {
+        font-size: 3vw;
+    }
+
+    .director__text-1 {
+        text-align: start
+    }
+
+    .director__text-2 {
+        text-align: start;
+    }
+
+    .director__highlight--italic {
+        font-size: 3.6vw;
+    }
+
+    .director__image-flower {
+        position: absolute;
+        display: block;
+        bottom: -10vw;
+        left: -20vw;
+        width: 60vw;
+        transform: scaleX(-1);
+    }
+
+    .director__image-wrapper {
+        display: none;
+    }
+
+    .director__image--mobile {
+        display: block;
+    }
+
+    .director__info-wrapper {
+        margin-top: 4vw;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }

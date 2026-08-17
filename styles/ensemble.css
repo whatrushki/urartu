@@ -227,3 +227,59 @@
 .ensemble__quote-star {
     width: 25vw;
 }
+
+.ensemble__link {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 3vw;
+
+    min-width: 35vw;
+    border-radius: 2vw;
+    padding: 2vw 4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.3vw solid var(--color-fg-blue-quote);
+    color: var(--color-fg-blue-quote);
+    transition: background-color 0.5s ease;
+}
+
+.ensemble__link:hover {
+    color: var(--color-bg-blue);
+    background-color: var(--color-fg-blue-quote);
+}
+
+@media (max-width: 650px) {
+    .ensemble__title {
+        margin-top: 32vw;
+        font-size: 8vw;
+        align-items: start;
+
+        :nth-child(1) {
+            color: var(--color-fg-blue-common);
+            transform: translateX(6vw);
+        }
+
+        :nth-child(2) {
+            color: var(--color-fg-blue-accent);
+            transform: translate(0);
+        }
+    }
+
+    .ensemble__quote-text {
+        font-size: 4vw;
+    }
+
+    .ensemble__quote-text-2 {
+        width: 55vw;
+    }
+
+    .ensemble__cloud--3 {
+        margin-right: -70vw;
+    }
+
+    .ensemble__cloud--4 {
+        margin-right: -40vw;
+    }
+}

@@ -109,6 +109,10 @@
     transform: translateX(-6%);
 }
 
+.dances__repertoire {
+    margin-top: 10vw;
+}
+
 .dances__repertoire-header {
     width: 100%;
     display: flex;
@@ -140,7 +144,7 @@
     font-size: 4vw;
     color: var(--color-fg-grey-accent);
     text-transform: uppercase;
-    margin-top: 2vw;
+    margin-top: 8vw;
 }
 
 .dances__card {
@@ -219,7 +223,74 @@
 }
 
 .dances__background--socks {
-    margin-top: -10vw;
+    margin-top: -4vw;
     width: 110%;
-    transform: translate(-4vw, 10vw);
+    transform: translate(-4vw, 12vw);
+}
+
+@media (max-width: 650px) {
+    .dances__title {
+        font-size: 8vw;
+    }
+
+    .dances__intro {
+        margin-left: 4vw;
+    }
+
+    .dances__curtain {
+        width: 30vw;
+        height: auto;
+    }
+
+    .dances__curtain--left {
+        margin-top: -15vw;
+        transform: translateX(-0.5vw);
+    }
+
+    .dances__curtain--right {
+        margin-top: -15vw;
+        transform: translateX(0.5vw);
+    }
+
+    .dances__subtitle {
+        font-size: 2.8vw;
+        max-width: 40vw;
+    }
+
+    .dances__mission {
+        align-self: flex-end;
+        font-size: 3vw;
+        max-width: 55vw;
+    }
+
+    .dances__header {
+        width: 100%;
+        flex-direction: column;
+        gap: 8vw;
+    }
+
+    .dances__card-1 {
+        transform: translateX(-1vw);
+
+        p {
+            transform: translateX(3vw);
+        }
+    }
+
+    .dances__card-2 {
+        margin-top: 30vw;
+
+        p {
+            transform: translateX(28vw);
+        }
+    }
+
+    .dances__repertoire-title {
+        max-width: 50vw;
+        font-size: 2.8vw;
+    }
+
+    .dances__quote {
+        font-size: 3.4vw;
+    }
 }

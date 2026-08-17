@@ -61,11 +61,11 @@
                 <span class="history__title-line_2">с одного шага</span>
             </h2>
 
+            <img class="history__decoration history__decoration--pomegranate" src="./assets/images/pomegranate-2.png"
+                alt="Гранат">
+
             <div class="history__date-block">
                 <!-- ===== ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ (1-й ряд) ===== -->
-                <img class="history__decoration history__decoration--pomegranate"
-                    src="./assets/images/pomegranate-2.png" alt="Гранат">
-
                 <img class="history__decoration history__decoration--ishhanac-1" src="./assets/images/ishhanac-1.png"
                     alt="Ишханац">
                 <img class="history__decoration history__decoration--ishhanac-2" src="./assets/images/ishhanac-2.png"
@@ -74,7 +74,8 @@
                 <!-- ===== БЛОК С ДАТОЙ ===== -->
                 <div class="history__date-text_block">
                     <span class="history__date">2014</span>
-                    <p class="history__date-text">Майское утро этого года положило начало</br>новому творческому пути.
+                    <p class="history__text history__date-text">Майское утро этого года положило начало</br>новому
+                        творческому пути.
                     </p>
                 </div>
             </div>
@@ -185,13 +186,13 @@
                 <!-- Элемент 2: Солнце -->
                 <div class="symbols__element symbols__element-2">
                     <img class="symbols__element-icon" src="./assets/images/urartu-element-2.png" alt="Символ солнца">
-                    <p class="symbols__element-label">солнце, мужская сила</p>
+                    <p class="symbols__element-label">солнце,<br>мужская сила</p>
                 </div>
 
                 <!-- Элемент 3: Развитие -->
                 <div class="symbols__element symbols__element-3">
                     <img class="symbols__element-icon" src="./assets/images/urartu-element-3.png" alt="Символ развития">
-                    <p class="symbols__element-label">развитие, бесконечность</p>
+                    <p class="symbols__element-label">развитие,<br>бесконечность</p>
                 </div>
 
                 <!-- Элемент 4: Звезды -->
@@ -279,13 +280,15 @@
 
                 <!-- Карточки танцев -->
                 <div class="dances__cards">
-                    <div class="dances__card">
+                    <div class="dances__card dances__card-1">
                         <p class="dances__card-label dances__card-label-1">сценические</p>
-                        <img class="dances__card-image" src="./assets/images/dances-scenic.png" alt="Сценический танец">
+                        <img class="dances__card-image dances__card-image-1" src="./assets/images/dances-scenic.png"
+                            alt="Сценический танец">
                     </div>
                     <div class="dances__card dances__card-2">
                         <p class="dances__card-label dances__card-label-2">этнические</p>
-                        <img class="dances__card-image dances__card-image-2" src="./assets/images/dances-ethnic.png" alt="Этнический танец">
+                        <img class="dances__card-image dances__card-image-2" src="./assets/images/dances-ethnic.png"
+                            alt="Этнический танец">
                     </div>
                 </div>
             </div>
@@ -609,41 +612,51 @@
 
                 <!-- Левая колонка: биография -->
                 <div class="director__bio">
+                    <div class="director__epigraph">
+                        <!-- Имя и должность -->
+                        <p class="director__name">Варданян</br>Лилит Самвеловна</p>
 
-                    <!-- Имя и должность -->
-                    <p class="director__name">Варданян</br>Лилит Самвеловна</p>
+                        <!-- Цитата -->
+                        <blockquote class="director__quote">
+                            «Танец нужно не исполнять — его нужно проживать, оставляя на сцене не шаги, а часть своей
+                            души.»
+                        </blockquote>
+                    </div>
+                    <div class="director__info-wrapper">
+                        <div class="director__text-wrapper">
+                            <p class="director__text director__text-1">
+                                Лилит Самвеловна посвятила армянскому танцу более <span class="director__highlight">15
+                                    лет.</span> За это время она воспитала десятки
+                                артистов, которые сегодня выступают на международных сценах.
+                            </p>
 
-                    <!-- Цитата -->
-                    <blockquote class="director__quote">
-                        «Танец нужно не исполнять — его нужно проживать, оставляя на сцене не шаги, а часть своей души.»
-                    </blockquote>
-
-                    <p class="director__text">
-                        Лилит Самвеловна посвятила армянскому танцу более <span class="director__highlight">15
-                            лет.</span> За это время она воспитала десятки
-                        артистов, которые сегодня выступают на международных сценах.
-                    </p>
-
-                    <!-- Текст биографии -->
-                    <div class="director__text">
-                        Окончила Колледж искусств имени Шарля Азнавура по специальностям <span
-                            class="director__highlight director__highlight--italic">«Хореография»</span> и <span
-                            class="director__highlight director__highlight--italic">«Фортепиано»</span>, а также
-                        Консерваторию
-                        по специальности
-                        <span class="director__highlight director__highlight--italic">«Музыковедение»</span>
-                        (фольклорист-музыковед). После
-                        окончания преподавала в Музыкальном училище имени Романоса Меликяна.
-                        <span class="director__highlight">Сегодня она передает свою любовь к армянскому танцу новому
-                            поколению, бережно сохраняя
-                            традиции и открывая новые таланты.</span>
-
+                            <!-- Текст биографии -->
+                            <p class="director__text director__text-2">
+                                Окончила Колледж искусств имени Шарля Азнавура по специальностям <span
+                                    class="director__highlight director__highlight--italic">«Хореография»</span> и <span
+                                    class="director__highlight director__highlight--italic">«Фортепиано»</span>, а также
+                                Консерваторию
+                                по специальности
+                                <span class="director__highlight director__highlight--italic">«Музыковедение»</span>
+                                (фольклорист-музыковед). После
+                                окончания преподавала в Музыкальном училище имени Романоса Меликяна.
+                                <span class="director__highlight">Сегодня она передает свою любовь к армянскому танцу
+                                    новому
+                                    поколению, бережно сохраняя
+                                    традиции и открывая новые таланты.</span>
+                            </p>
+                        </div>
+                        <img class="director__image director__image--mobile" src="./assets/images/lilit.png"
+                            alt="Лилит Самвеловна Варданян — руководитель ансамбля Урарту">
                     </div>
                 </div>
 
-                <!-- Правая колонка: портрет -->
-                <img class="director__image" src="./assets/images/lilit.png"
-                    alt="Лилит Самвеловна Варданян — руководитель ансамбля Урарту">
+                <div class="director__image-wrapper">
+                    <!-- Правая колонка: портрет -->
+                    <img class="director__image" src="./assets/images/lilit.png"
+                        alt="Лилит Самвеловна Варданян — руководитель ансамбля Урарту">
+                    <!-- <img class="director__image-flower" src="./assets/images/stairs.png" alt=""> -->
+                </div>
             </div>
 
             <!-- ===== ДЕКОРАТИВНЫЕ ОБЛАКА ===== -->
@@ -682,7 +695,7 @@
 
             <div class="ensemble__quote ensemble__quote-2">
                 <p class="ensemble__quote-text ensemble__quote-text-2">
-                    «Танец, быть может, одно из самых характерных<br>проявлений жизни чловека»
+                    «Танец, быть может, одно из самых характерных проявлений жизни чловека»
                 </p>
                 <div class="ensemble__qoute-clouds_wrapper">
                     <img class="ensemble__cloud ensemble__cloud--3" src="./assets/images/cloud.png" alt="Облако">
@@ -696,28 +709,9 @@
                 </p>
 
                 <div class="ensemble__contacts">
-                    <a href="tel:+7(988)257-19-29" class="ensemble__cta-button">
-                        <img src="./assets/images/phone.svg" class="footer__cta-icon">
-                        <span class="footer__cta-text">Связаться с нами</span>
+                    <a href="info.html" class="ensemble__link">
+                        <p>Присоединяйся</p>
                     </a>
-
-                    <!-- Социальные сети -->
-                    <div class="ensemble__socials">
-                        <a href="https://www.instagram.com/ensemble__urartu" class="ensemble__social-link"
-                            aria-label="Instagram">
-                            <img src="./assets/images/instagram.svg" alt="Instagram">
-                        </a>
-                        <a href="https://t.me/urartustsil" class="ensemble__social-link" aria-label="Telegram">
-                            <img src="./assets/images/telegram.svg" alt="Telegram">
-                        </a>
-                        <a href="#" class="ensemble__social-link ensemble__social-link-tiktok" aria-label="TikTok">
-                            <img src="./assets/images/tiktok.svg" alt="TikTok">
-                        </a>
-                        <a href="https://ru.pinterest.com/ensemble_urartu" class="ensemble__social-link"
-                            aria-label="Pinterest">
-                            <img src="./assets/images/pinterest.svg" alt="Pinterest">
-                        </a>
-                    </div>
                 </div>
             </div>
 
@@ -739,7 +733,7 @@
                     <!-- Заголовок -->
                     <h2 class="developers__title">
                         <span class="developers__title-line">Знакомили</span>
-                        <span class="developers__title-line">с сайтом</span>
+                        <span class="developers__title-line">с ансамблем</span>
                     </h2>
 
                     <!-- Подзаголовок -->
@@ -752,7 +746,7 @@
                         alt="Команда ансамбля Урарту">
 
                     <!-- Социальные сети -->
-                    <div class="developers__socials">
+                    <!-- <div class="developers__socials">
                         <a class="developers__social-link" href="#">
                             <span class="developers__social-label">телеграм</span>
                         </a>
@@ -762,7 +756,7 @@
                         <a class="developers__social-link" href="#">
                             <span class="developers__social-label">тик ток</span>
                         </a>
-                    </div>
+                    </div> -->
                 </div>
 
                 <!-- Правая колонна -->
@@ -782,9 +776,6 @@
 
             <!-- ===== ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ (с иконками) ===== -->
             <footer class="developers__footer">
-                <a class="developers__link" href="info.html">
-                    <p class="developers__link-content">хочу к вам</p>
-                </a>
                 <div class="developers__icons">
                     <a class="developers__footer-link developers__footer--what" href="#">
                         <img class="developers__footer-icon" src="./assets/images/WHAT.svg" alt="Иконка">
@@ -794,9 +785,6 @@
                         <img class="developers__footer-icon" src="./assets/images/URARTU Team.svg" alt="Иконка">
                     </a>
                 </div>
-                <a class="developers__link hidden" href="info.html">
-                    <p class="developers__link-content">хочу к вам</p>
-                </a>
             </footer>
         </section>
     </main>

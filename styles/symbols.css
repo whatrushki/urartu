@@ -48,7 +48,7 @@
 }
 
 .symbols__elements {
-    margin-top: 6vw;
+    margin-top: 12vw;
     width: 100%;
     position: relative;
     display: flex;
@@ -107,7 +107,7 @@
 .symbols__name-block {
     width: 100%;
     position: relative;
-    margin-top: 6vw;
+    margin-top: 12vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -192,4 +192,34 @@
     margin-top: -4vw;
     width: 115%;
     transform: translateY(8vw);
+}
+
+@media (max-width: 650px) {
+    .symbols__title {
+        font-size: 8vw;
+    }
+
+    .symbols__name-text {
+        max-width: 70vw;
+        font-size: 2.8vw;
+    }
+
+    .symbols__element-label {
+        font-size: 2.8vw;
+        width: 35vw;
+    }
+
+    .symbols__description {
+        font-size: 2.8vw;
+        width: 90vw;
+    }
+
+    .symbols__name-description {
+        max-width: 80vw;
+        font-size: 3.5vw;
+    }
+
+    .symbols__carpet--3 {
+        top: 105vw;
+    }
 }

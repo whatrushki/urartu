@@ -54,6 +54,10 @@ html {
     scrollbar-width: none;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 ::-webkit-scrollbar {
     width: 0;
     height: 0;
