@@ -47,15 +47,12 @@
 }
 
 html {
+    scroll-behavior: initial;
     overflow-x: hidden;
     background-color: var(--color-bg-white);
     -ms-overflow-style: none;
     overflow-y: overlay;
     scrollbar-width: none;
-}
-
-body {
-    overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -113,8 +110,19 @@ body {
 }
 
 @keyframes grainShift {
-    0% { background-position: 0% 0%; }
-    33% { background-position: 15% 10%; }
-    66% { background-position: 30% 5%; }
-    100% { background-position: 0% 0%; }
+    0% {
+        background-position: 0% 0%;
+    }
+
+    33% {
+        background-position: 15% 10%;
+    }
+
+    66% {
+        background-position: 30% 5%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
 }

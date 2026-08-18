@@ -2,8 +2,9 @@
     padding-top: 10vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    /* align-items: center; */
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .costumes__header {
@@ -41,7 +42,6 @@
 }
 
 .costumes__subtitle {
-    margin-top: 4vw;
     font-family: var(--font-body);
     font-size: 2vw;
     max-width: 40vw;
@@ -49,12 +49,18 @@
 }
 
 .costumes__list {
-    margin-top: 10vw;
+    margin-top: 2vw;
+    position: relative;
+    width: 100%;
+    /* height: min(75vh, 850px); */
+}
+
+.costumes__track {
     flex-wrap: nowrap;
     display: flex;
     flex-direction: row;
     align-items: center;
-    scroll-snap-type: x mandatory;
+    padding-right: 12vw;
 }
 
 .costume {
@@ -64,7 +70,6 @@
     align-items: center;
     justify-content: center;
     gap: 2vw;
-    scroll-snap-align: start;
     padding: 0vw 10vw;
 }
 
@@ -179,9 +184,23 @@
     text-align: end;
 }
 
-@media (max-width: 650px) {
-    .costumes__header {
-        margin-top: 10vw;
+@media (max-width: 1100px) {
+    #costumes {
+        padding-top: 14vw;
+    }
+}
+
+@media (max-width: 890px) {
+    #costumes {
+        padding-top: 6vw;
+        min-height: 120vh;
+    }
+}
+
+@media (max-width: 630px) {
+    #costumes {
+        padding-top: 10vw;
+        min-height: 100vh;
     }
 
     .costumes__title {
@@ -194,7 +213,7 @@
     }
 
     .costumes__list {
-        margin-top: 12vw;
+        margin-top: 2vw;
     }
 
     .costumes__description {

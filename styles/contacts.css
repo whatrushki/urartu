@@ -16,6 +16,7 @@
     position: absolute;
 
     text-transform: uppercase;
+    text-wrap: nowrap;
 
     flex-direction: column;
     align-items: center;
@@ -156,30 +157,30 @@
     gap: 2vw;
     padding: 2vw 4vw;
     text-decoration: none;
-    color: var(--color-bg-blue);
-    background-color: var(--color-fg-blue-accent);
-    border: 0.3vw solid var(--color-fg-blue-accent);
     border-radius: 2vw;
-    transition: all 0.3s ease;
     font-size: 3vw;
     font-family: var(--font-body);
     text-transform: uppercase;
     font-weight: 500;
+    border: 0.3vw solid var(--color-fg-blue-quote);
+    color: var(--color-fg-blue-quote);
+    transition: all 0.5s ease;
 
     svg {
         height: 3.5vw;
         width: auto;
         object-fit: contain;
-        color: var(--color-bg-blue);
+        color: var(--color-bg-blue-quote);
     }
 }
 
 .footer__cta-button:hover {
-    color: var(--color-fg-blue-accent);
-    background-color: transparent;
+    color: var(--color-bg-blue);
+    background-color: var(--color-fg-blue-quote);
+    box-shadow: 0 0 4vw var(--color-fg-blue-quote), 0 0 10vw var(--color-fg-blue-quote);
 
     svg {
-        color: var(--color-fg-blue-accent);
+        color: var(--color-bg-blue);
     }
 }
 

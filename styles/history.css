@@ -242,6 +242,7 @@
 }
 
 .history__quote-wrapper {
+    width: 100%;
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -255,10 +256,10 @@
 }
 
 .history__quote-armenian {
+    text-align: center;
     font-family: var(--font-quote-armenian);
     white-space: nowrap;
-    font-size: 4vw;
-    transform: translateX(-1vw);
+    font-size: 3.8vw;
 }
 
 .history__quote-translation {

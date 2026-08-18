@@ -183,13 +183,14 @@
     gap: 1vw;
 }
 
-@media (max-width: 680px) {
+@media (max-width: 800px) {
     #filials {
-        height: 100vh;
+        height: 120vh;
+        margin-bottom: 24vw;
     }
 
     .filials-section__title {
-        margin-top: 0;
+        margin-top: 8vw;
     }
 
     .filials__decoration--pomegranate-1 {
@@ -199,7 +200,7 @@
     .filials__decoration--pomegranate-2 {
         width: 35vw;
         transform: rotate(-20deg);
-        bottom: -8vw;
+        bottom: -24vh;
         right: -6vw;
     }
 
@@ -260,5 +261,22 @@
 
     .filials-section__card-color {
         width: 5vw;
+    }
+}
+
+@media (max-width: 650px) {
+    #filials {
+        height: 100vh;
+        margin-bottom: 0;
+    }
+
+    .filials-section__title {
+        margin-top: 0;
+    }
+
+    .filials__decoration--pomegranate-2 {
+        width: 35vw;
+        transform: rotate(-20deg);
+        bottom: -18vw;
     }
 }

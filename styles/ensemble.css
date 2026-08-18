@@ -242,12 +242,13 @@
     align-items: center;
     border: 0.3vw solid var(--color-fg-blue-quote);
     color: var(--color-fg-blue-quote);
-    transition: background-color 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 .ensemble__link:hover {
     color: var(--color-bg-blue);
     background-color: var(--color-fg-blue-quote);
+    box-shadow: 0 0 4vw var(--color-fg-blue-quote), 0 0 10vw var(--color-fg-blue-quote);
 }
 
 @media (max-width: 650px) {
