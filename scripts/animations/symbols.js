@@ -25,16 +25,20 @@ function initSymbols() {
     gsap.utils.toArray(".symbols__carpet").forEach((carpet, i) => {
         const speeds = [-10, -15, -20, -12];
 
-        gsap.to(carpet, {
-            y: `${speeds[i]}vh`,
-            ease: "none",
-            scrollTrigger: {
-                trigger: carpet,
-                start: "top bottom",
-                end: "bottom top",
-                scrub: 1
-            }
-        });
+        gsap.fromTo(carpet,
+            {
+                y: '14vh'
+            },
+            {
+                y: `${speeds[i]}vh`,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: carpet,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: 1
+                }
+            });
 
     });
 

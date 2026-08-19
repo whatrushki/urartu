@@ -50,8 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initDances();
   initCostumes();
   initDirector();
-  initDecorations();
+  initEnsemble();
   initDevelopers();
+  initDecorations();
+  initContacts();
 
   // Обновляем ScrollTrigger
   ScrollTrigger.refresh(); // 👈 ИСПРАВЛЕНО
@@ -66,4 +68,8 @@ window.addEventListener('resize', () => {
   resizeTimer = setTimeout(() => {
     ScrollTrigger.refresh(); // 👈 ИСПРАВЛЕНО
   }, 250);
+});
+
+window.addEventListener("load", () => {
+    ScrollTrigger.refresh();
 });
