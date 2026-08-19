@@ -103,11 +103,12 @@
 
 .history__decoration--pomegranate {
     position: absolute;
-    top: -2vw;
-    right: -8vw;
-    width: 40vw;
+    top: 4vw;
+    right: -14vw;
+    width: 48vw;
     height: auto;
-    transform: rotate(-20deg);
+    scale: -1;
+    transform: rotate(15deg);
 }
 
 .history__decoration--plant-1 {
