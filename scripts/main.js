@@ -49,9 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initSymbols();
   initDances();
   initCostumes();
+  initDirector();
   initDecorations();
   initDevelopers();
-  
+
   // Обновляем ScrollTrigger
   ScrollTrigger.refresh(); // 👈 ИСПРАВЛЕНО
 });

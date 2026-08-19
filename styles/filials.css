@@ -22,7 +22,7 @@
     width: 20vw;
     bottom: -4vw;
     right: -6vw;
-    transform: rotate(10deg);
+    transform: rotate(10deg) scaleX(-1);
 }
 
 .filials__content {
@@ -113,6 +113,11 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    a {
+        text-decoration: none;
+        transition: all 0.4s ease;
+    }
 }
 
 .filials-section__card {
@@ -181,6 +186,12 @@
     display: flex;
     flex-direction: column;
     gap: 1vw;
+}
+
+@media (min-width: 650px) {
+    .filials-section__cards>a:hover {
+        transform: scale(1.05);
+    }
 }
 
 @media (max-width: 800px) {

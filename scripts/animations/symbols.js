@@ -37,4 +37,21 @@ function initSymbols() {
         });
 
     });
+
+    gsap.utils.toArray(".symbols__element").forEach((el, i) => {
+        gsap.fromTo(el,
+            {
+                scale: 0.7
+            },
+            {
+                scale: 1,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top bottom",
+                    end: "bottom 80%",
+                    scrub: 1
+                }
+            });
+    });
 }

@@ -15,9 +15,9 @@ function initDevelopers() {
                 end: 'top 50%',
                 scrub: 1
             }
-    });
+        });
 
-    gsap.fromTo('.developers__column--right', 
+    gsap.fromTo('.developers__column--right',
         {
             x: '20vw'
         },
@@ -30,5 +30,5 @@ function initDevelopers() {
                 end: 'top 50%',
                 scrub: 1
             }
-    });
+        });
 }

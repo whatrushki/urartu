@@ -33,10 +33,5 @@ function initCostumes() {
         ease: "none",
     });
 
-    // tl.to(".costumes__header", {
-    //     marginTop: "-4vw",
-    //     ease: "none"
-    // }, 0);
-
     ScrollTrigger.refresh();
 }
