@@ -171,7 +171,7 @@
     width: 40vw;
     height: auto;
     margin-left: -5vw;
-    transform: scaleX(-1) rotate(-30deg) translateY(5vw);
+    transform: scaleX(1) rotate(-40deg) translateY(7vw);
     margin-top: -3vw;
 }
 
