@@ -84,6 +84,7 @@
 }
 
 .director__name {
+    transition: all 0.4s ease;
     font-family: var(--font-heading);
     font-size: 4vw;
     color: var(--color-fg-green-common);
@@ -91,6 +92,7 @@
 }
 
 .director__quote {
+    transition: all 0.4s ease;
     font-family: var(--font-quote);
     color: var(--color-fg-green-accent);
     font-size: 2.5vw;
@@ -98,6 +100,7 @@
 }
 
 .director__text {
+    transition: all 0.4s ease;
     font-size: 2vw;
     font-family: var(--font-body);
     color: var(--color-fg-green-common);
@@ -135,7 +138,7 @@
     z-index: 2;
     width: 110%;
     bottom: -8vw;
-    left: -3vw;
+    left: -5vw;
 }
 
 .director__cloud {
@@ -203,6 +206,15 @@
 
 .director__image--mobile {
     display: none;
+}
+
+@media (min-width: 650px) {
+    .director__text:hover,
+    .director__name:hover,
+    .director__quote:hover {
+        scale: 1.05;
+        transform: translateX(1vw);
+    }
 }
 
 @media (max-width: 650px) {

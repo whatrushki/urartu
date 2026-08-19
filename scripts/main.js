@@ -46,8 +46,11 @@ console.log(typeof initHero);
 document.addEventListener('DOMContentLoaded', () => {
   initHero();
   initHistory();
+  initSymbols();
+  initDances();
   initCostumes();
   initDecorations();
+  initDevelopers();
   
   // Обновляем ScrollTrigger
   ScrollTrigger.refresh(); // 👈 ИСПРАВЛЕНО

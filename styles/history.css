@@ -285,6 +285,7 @@
     }
 
     .history__text--main {
+        margin-top: 8vw;
         width: 45vw;
     }
 
@@ -294,6 +295,13 @@
 
     .history__title--second {
         font-size: 8vw;
+    }
+
+    .history__priest-label {
+        font-size: 3.8vw;
+    }
+    .history__priest-label-block {
+        margin-top: 6vw;
     }
 
     .history__title--third {

@@ -1,7 +1,5 @@
 function initDecorations() {
     const decorations = gsap.utils.toArray(".decoration");
-    
-console.log(decorations);
 
     decorations.forEach((el) => {
         const base = gsap.getProperty(el, "rotation");
