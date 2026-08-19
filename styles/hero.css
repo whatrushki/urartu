@@ -125,6 +125,6 @@
     .hero__main-image {
         width: 300vw;
         height: auto;
-        transform: translate(70vw, 10vw);
+        transform: translate(70vw, 11vw);
     }
 }

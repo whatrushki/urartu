@@ -67,7 +67,7 @@
     z-index: 1;
     width: 100%;
     height: 100vh;
-    background-image: url("../assets/images/stars.png");
+    background-image: url("../assets/images/stars.webp");
     background-size: 60%;
     background-repeat: repeat;
     transform: translateY(-30vw);

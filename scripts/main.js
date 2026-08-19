@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHero();
   initHistory();
   initCostumes();
+  initDecorations();
   
   // Обновляем ScrollTrigger
   ScrollTrigger.refresh(); // 👈 ИСПРАВЛЕНО

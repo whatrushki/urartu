@@ -40,5 +40,3 @@ function initCostumes() {
 
     ScrollTrigger.refresh();
 }
-
-window.addEventListener("load", initCostumes);

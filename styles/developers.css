@@ -45,6 +45,7 @@
 }
 
 .developers__team-image {
+    padding-bottom: 4vw;
     width: 45vw;
     height: auto;
 }

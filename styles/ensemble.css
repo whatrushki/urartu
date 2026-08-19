@@ -10,7 +10,7 @@
     height: 100%;
     position: absolute;
     z-index: 1;
-    background-image: url("../assets/images/stars.png");
+    background-image: url("../assets/images/stars.webp");
     background-size: 60%;
     background-repeat: repeat;
 }
