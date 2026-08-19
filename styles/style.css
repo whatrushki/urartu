@@ -48,11 +48,16 @@
 
 html {
     scroll-behavior: initial;
-    overflow-x: clip;
     background-color: var(--color-bg-white);
     -ms-overflow-style: none;
     overflow-y: overlay;
     scrollbar-width: none;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    position: relative;
 }
 
 ::-webkit-scrollbar {
