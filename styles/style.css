@@ -47,18 +47,25 @@
 }
 
 html {
+    position: relative;
     scroll-behavior: initial;
     background-color: var(--color-bg-white);
     -ms-overflow-style: none;
-    overflow-y: overlay;
     scrollbar-width: none;
+    overflow-y: overlay;
 }
 
-html,
 body {
-    overflow-x: hidden;
     position: relative;
+    overflow-x: clip;
+    width: 100%;
 }
+
+section {
+    position: relative;
+    width: 100%;
+}
+
 
 ::-webkit-scrollbar {
     width: 0;
@@ -114,12 +121,6 @@ body {
     animation: grainShift 0.8s steps(3) infinite;
 }
 
-@media (max-width: 650px) {
-    .grain-overlay {
-        background-size: 1000px 1000px;
-    }
-}
-
 @keyframes grainShift {
     0% {
         background-position: 0% 0%;
@@ -136,4 +137,27 @@ body {
     100% {
         background-position: 0% 0%;
     }
+}
+
+.rights__block {
+    margin-left: 4vw;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1vw;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.rights__text {
+    color: white;
+    font-size: 1vw;
+    font-family: var(--font-body);
+}
+
+.github__link > img{
+    width: 4vw;
+    height: auto;
 }

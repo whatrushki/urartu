@@ -4,11 +4,11 @@
 gsap.registerPlugin(ScrollTrigger);
 
 // ==========================================
-// 2️⃣ НАСТРОЙКА SCROLLTRIGGER (ГЛОБАЛЬНАЯ)
+// 2️⃣ НАСТРОЙКА SCROLLTRIGGER
 // ==========================================
 ScrollTrigger.config({
   ignoreMobileResize: true,
-  markers: true
+  // markers: true // выключите на проде
 });
 
 // ==========================================
@@ -22,9 +22,15 @@ const lenis = new Lenis({
 });
 
 // ==========================================
-// 4️⃣ СВЯЗЫВАЕМ LENIS С SCROLLTRIGGER
+// 4️⃣ СВЯЗЫВАЕМ LENIS С SCROLLTRIGGER (В ОБЕ СТОРОНЫ!)
 // ==========================================
-lenis.on('scroll', ScrollTrigger.update); // 👈 ИСПРАВЛЕНО
+// 1. Lenis передает координаты в ScrollTrigger
+lenis.on('scroll', ScrollTrigger.update);
+
+// 2. ScrollTrigger при изменении высоты (pinning) обновляет размеры Lenis:
+ScrollTrigger.addEventListener('refresh', () => {
+  lenis.resize();
+});
 
 // ==========================================
 // 5️⃣ ИНТЕГРАЦИЯ С GSAP TICKER
@@ -36,40 +42,44 @@ gsap.ticker.add((time) => {
 gsap.ticker.lagSmoothing(0);
 
 // ==========================================
-// 6️⃣ ТВОИ АНИМАЦИИ
-// ==========================================
-console.log(typeof initHero);
-
-// ==========================================
-// 7️⃣ ЗАПУСКАЕМ ВСЁ ПОСЛЕ ЗАГРУЗКИ
+// 6️⃣ ЗАПУСКАЕМ ВСЁ ПОСЛЕ ЗАГРУЗКИ DOM
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
-  initHero();
-  initHistory();
-  initSymbols();
-  initDances();
-  initCostumes();
-  initDirector();
-  initEnsemble();
-  initDevelopers();
-  initDecorations();
-  initContacts();
+  const initSafe = (fn) => {
+    try { if (typeof fn === 'function') fn(); } catch (e) { console.warn(e); }
+  };
 
-  // Обновляем ScrollTrigger
-  ScrollTrigger.refresh(); // 👈 ИСПРАВЛЕНО
+  // На info.html нужны только эти секции:
+  initSafe(initDecorations);
+  initSafe(initContacts);
+  initSafe(initTextAnimations);
+  initSafe(initHero);
+  initSafe(initHistory);
+  initSafe(initSymbols);
+  initSafe(initDances);
+  initSafe(initCostumes);
+  initSafe(initDirector);
+  initSafe(initEnsemble);
+  initSafe(initDevelopers);
+  initSafe(initContacts);
+
+  ScrollTrigger.refresh();
+  lenis.resize();
 });
 
 // ==========================================
-// 8️⃣ ОБНОВЛЯЕМ ПРИ РЕСАЙЗЕ
+// 7️⃣ ОБНОВЛЯЕМ ПРИ ПОЛНОЙ ЗАГРУЗКЕ КАРТИНОК И РЕСАЙЗЕ
 // ==========================================
+window.addEventListener('load', () => {
+  ScrollTrigger.refresh();
+  lenis.resize();
+});
+
 let resizeTimer;
 window.addEventListener('resize', () => {
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(() => {
-    ScrollTrigger.refresh(); // 👈 ИСПРАВЛЕНО
-  }, 250);
-});
-
-window.addEventListener("load", () => {
     ScrollTrigger.refresh();
+    lenis.resize();
+  }, 250);
 });

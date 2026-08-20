@@ -1,6 +1,6 @@
 Attribution-NonCommercial-NoDerivatives 4.0 International
 
-Copyright (c) 2026 whatrushki
+Copyright (c) 2026 WHAT Technologies
 
 =======================================================================
 

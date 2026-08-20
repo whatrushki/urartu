@@ -3,13 +3,37 @@ function initEnsemble() {
     if (!element) return;
 
     const cloud1 = document.querySelector(".ensemble__cloud--1");
+    const cloud2 = document.querySelector(".ensemble__cloud--2");
     const cloud3 = document.querySelector(".ensemble__cloud--3");
     const cloud4 = document.querySelector(".ensemble__cloud--4");
+    const moon = document.querySelector(".ensemble__moon");
+
+    if (moon) {
+        gsap.fromTo(moon, {
+            rotation: '-=10deg'
+        }, {
+            rotation: '+=10deg',
+            duration: 4,
+            ease: "sine.inOut",
+            repeat: -1,
+            yoyo: true
+        });
+    }
 
     if (cloud1) {
         gsap.to(cloud1, {
             x: "-=8vw",
             duration: 5,
+            ease: "sine.inOut",
+            repeat: -1,
+            yoyo: true
+        });
+    }
+
+    if (cloud2) {
+        gsap.to(cloud2, {
+            x: "+=5vw",
+            duration: 4,
             ease: "sine.inOut",
             repeat: -1,
             yoyo: true

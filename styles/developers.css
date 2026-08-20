@@ -179,4 +179,28 @@
     .developers__title {
         font-size: 8vw;
     }
+
+    .developers__decoration--flower-1 {
+        width: 35vw;
+        top: 26vw;
+        left: -2vw;
+    }
+
+    .developers__decoration--flower-2 {
+        bottom: -12vw;
+        right: -18vw;
+        width: 55vw;
+    }
+
+    .developers__decoration--flower-3 {
+        bottom: 8vw;
+        left: -14vw;
+        width: 55vw;
+    }
+
+    .developers__decoration--flower-4 {
+        top: 28vw;
+        right: -14vw;
+        width: 45vw;
+    }
 }

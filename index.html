@@ -3,10 +3,38 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta lang="ru">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <title>УРАРТУ - Ансамбль армянского народного танца</title>
+
+    <!-- Основные SEO мета-теги -->
+    <title>Ансамбль армянского народного танца «Урарту» в Ростове-на-Дону</title>
+    <meta name="description"
+        content="Ансамбль армянского танца «Урарту» в Ростове-на-Дону. Обучение сценическим и этническим танцам для детей от 7 лет и взрослых. Руководитель — Лилит Варданян.">
+    <meta name="keywords"
+        content="армянские танцы ростов, ансамбль урарту, школа армянского танца, кочари ростов, армянские народные танцы для детей">
+    <link rel="canonical" href="https://urartu.site/"> <!-- укажите ваш реальный домен -->
+
+    <!-- Geo-теги для локального SEO (Яндекс / Google Карты) -->
+    <meta name="geo.region" content="RU-ROS">
+    <meta name="geo.placename" content="Ростов-на-Дону">
+    <meta name="geo.position" content="47.222531;39.718705">
+    <meta name="ICBM" content="47.222531, 39.718705">
+
+    <!-- Open Graph (для Telegram, VK, WhatsApp) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://urartu.site/">
+    <meta property="og:title" content="Ансамбль армянского танца «Урарту» | Ростов-на-Дону">
+    <meta property="og:description"
+        content="Там, где рождается танец. Обучение армянским традиционным танцам для детей и взрослых. Записывайтесь на занятия!">
+    <meta property="og:image" content="https://urartu.site/assets/images/ensemble-urartu.webp">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="Ансамбль Урарту">
+
+    <!-- Preload ключевых ресурсов для ускорения загрузки (Core Web Vitals) -->
+    <link rel="preload" href="./assets/images/qochari-sherdi.webp" as="image" fetchpriority="high">
+    <link rel="preload" href="./styles/fonts.css" as="style">
+
+    <!-- Стили -->
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/fonts.css">
     <link rel="stylesheet" href="styles/hero.css">
@@ -17,6 +45,37 @@
     <link rel="stylesheet" href="styles/director.css">
     <link rel="stylesheet" href="styles/ensemble.css">
     <link rel="stylesheet" href="styles/developers.css">
+
+    <!-- Микроразметка Schema.org (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PerformingGroup",
+      "name": "Ансамбль армянского народного танца «Урарту»",
+      "alternateName": "Urartu Dance Ensemble",
+      "url": "https://urartu.site/",
+      "logo": "https://urartu.site/assets/images/logo-mono.svg",
+      "image": "https://urartu.site/assets/images/ensemble-urartu.webp",
+      "description": "Обучение традиционному и сценическому армянскому народному танцу в Ростове-на-Дону.",
+      "telephone": "+7-988-257-19-29",
+      "founder": {
+        "@type": "Person",
+        "name": "Лилит Самвеловна Варданян",
+        "jobTitle": "Художественный руководитель и хореограф"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ростов-на-Дону",
+        "addressCountry": "RU"
+      },
+      "sameAs": [
+        "https://www.instagram.com/ensemble__urartu",
+        "https://t.me/urartustsil",
+        "https://t.me/urartustsil",
+        "https://ru.pinterest.com/ensemble_urartu"
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -35,26 +94,27 @@
                     </a>
                     <a class="hero__link" href="#costumes">Костюмы</a>
                     <a class="hero__link" href="#director">Руководитель</a>
-                    <a class="hero__link" href="#developers">Ансамбль</a>
+                    <a class="hero__link" href="#ensemble">Ансамбль</a>
                 </header>
 
+                <!-- В секции #hero: -->
                 <div class="hero__title_wrapper">
-                    <h1 class="hero__title urartu">
-                        <span class="char-1">у</span>
-                        <span class="char-2">р</span>
-                        <span class="char-3">а</span>
-                        <span class="char-4">р</span>
-                        <span class="char-5">т</span>
-                        <span class="char-6">у</span>
+                    <h1 class="hero__title urartu" aria-label="Ансамбль армянского народного танца Урарту">
+                        <span class="char-1" aria-hidden="true">у</span>
+                        <span class="char-2" aria-hidden="true">р</span>
+                        <span class="char-3" aria-hidden="true">а</span>
+                        <span class="char-4" aria-hidden="true">р</span>
+                        <span class="char-5" aria-hidden="true">т</span>
+                        <span class="char-6" aria-hidden="true">у</span>
                     </h1>
-                    <p class="hero__subtitle">Там где рождается танец...</p>
+                    <p class="hero__subtitle">Там где начинается танец...</p>
                 </div>
 
                 <img class="hero__main-image" src="assets/images/qochari-sherdi.webp" alt="Танец Кочари">
             </div>
-            <img class="hero__decoration hero__decoration--wheat-1" src="assets/images/wheat-1.webp" alt="">
-            <img class="hero__decoration hero__decoration--wheat-2" src="assets/images/wheat-2.webp" alt="">
-            <img class="hero__decoration hero__decoration--wheat-3" src="assets/images/wheat-3.webp" alt="">
+            <img class="hero__decoration hero__decoration--wheat-1 decoration" src="assets/images/wheat-1.webp" alt="">
+            <img class="hero__decoration hero__decoration--wheat-2 decoration" src="assets/images/wheat-2.webp" alt="">
+            <img class="hero__decoration hero__decoration--wheat-3 decoration" src="assets/images/wheat-3.webp" alt="">
         </section>
         <section id="history">
             <!-- ===== ПЕРВЫЙ ЗАГОЛОВОК ===== -->
@@ -767,6 +827,14 @@
 
             <!-- ===== ДОПОЛНИТЕЛЬНЫЕ ССЫЛКИ (с иконками) ===== -->
             <footer class="developers__footer">
+                <div class="rights__block">
+                    <a class="github__link" href="https://github.com/whatrushki/urartu"><img
+                            src="./assets/images/github.svg" alt="Гитхаб"></a>
+                    <div class="rights__text">
+                        <p>All rights reserved</p>
+                        <p>Copyright (c) 2026 WHAT Technologies</p>
+                    </div>
+                </div>
                 <div class="developers__icons">
                     <a class="developers__footer-link developers__footer--what" href="#">
                         <img class="developers__footer-icon" src="./assets/images/WHAT.svg" alt="Иконка">
@@ -795,6 +863,7 @@
     <script src="./scripts/animations/ensemble.js"></script>
     <script src="./scripts/animations/developers.js"></script>
     <script src="./scripts/animations/decorations.js"></script>
+    <script src="./scripts/animations/text.js"></script>
     <script src="./scripts/animations/contacts.js"></script>
     <script src="./scripts/main.js"></script>
 </body>

@@ -34,4 +34,19 @@ function initCostumes() {
     });
 
     ScrollTrigger.refresh();
+
+    gsap.fromTo('.costumes__list',
+        {
+            y: '14vw',
+        },
+        {
+            y: 0,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: '.costumes__list',
+                start: 'top bottom',
+                end: 'top 60%',
+                scrub: 1
+            }
+        });
 }

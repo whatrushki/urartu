@@ -31,4 +31,19 @@ function initDevelopers() {
                 scrub: 1
             }
         });
+
+    gsap.fromTo('.developers__team-image',
+        {
+            y: '14vw',
+        },
+        {
+            y: 0,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: '.developers__content',
+                start: 'top bottom',
+                end: 'top 60%',
+                scrub: 1
+            }
+        });
 }

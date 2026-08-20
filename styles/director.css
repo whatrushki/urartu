@@ -208,15 +208,6 @@
     display: none;
 }
 
-@media (min-width: 650px) {
-    .director__text:hover,
-    .director__name:hover,
-    .director__quote:hover {
-        scale: 1.05;
-        transform: translateX(1vw);
-    }
-}
-
 @media (max-width: 650px) {
     .director__main {
         margin-top: 12vw;

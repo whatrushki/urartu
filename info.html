@@ -3,103 +3,191 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta lang="ru">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <title>УРАРТУ - Наши филиалы</title>
+
+    <!-- ===== SEO МЕТА-ТЕГИ ===== -->
+    <title>Филиалы и запись на армянские танцы в Ростове-на-Дону | Ансамбль «Урарту»</title>
+    <meta name="description"
+        content="Филиалы ансамбля армянского танца «Урарту» в Ростове-на-Дону: ул. Таганрогская 161 (Военвед), пер. Измайловский 4 (Суворовский), ул. Шаумяна 94 (Центр). Запись в младшую, среднюю и старшую группы.">
+    <meta name="keywords"
+        content="филиалы урарту, армянские танцы ростов адреса, танцы военвед, танцы суворовский ростов, танцы шаумяна, школа танцев для детей ростов">
+    <link rel="canonical" href="https://urartu.site/info.html">
+
+    <!-- ===== ГЕО-ТЕГИ ДЛЯ РОСТОВА-НА-ДОНУ ===== -->
+    <meta name="geo.region" content="RU-ROS">
+    <meta name="geo.placename" content="Ростов-на-Дону">
+    <meta name="geo.position" content="47.222531;39.718705">
+    <meta name="ICBM" content="47.222531, 39.718705">
+
+    <!-- ===== OPEN GRAPH (СОЦСЕТИ И МЕССЕНДЖЕРЫ) ===== -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://urartu.site/info.html">
+    <meta property="og:title" content="Наши филиалы и контакты — Ансамбль армянского танца «Урарту»">
+    <meta property="og:description"
+        content="Адреса залов и расписание занятий в Ростове-на-Дону. Присоединяйтесь к нашей танцевальной семье!">
+    <meta property="og:image" content="https://urartu.site/assets/images/ensemble-urartu.webp">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="Ансамбль Урарту">
+
+    <!-- ===== СТИЛИ ===== -->
     <link rel="stylesheet" href="./styles/fonts.css">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/filials.css">
     <link rel="stylesheet" href="./styles/contacts.css">
     <link rel="stylesheet" href="./styles/developers.css">
+
+    <!-- ===== МИКРОРАЗМЕТКА SCHEMA.ORG (JSON-LD) ===== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "DanceSchool",
+          "@id": "https://urartu.site/info.html#filial-taganrogskaya",
+          "name": "Ансамбль армянского танца «Урарту» — Филиал Военвед",
+          "telephone": "+7-988-257-19-29",
+          "url": "https://urartu.site/info.html",
+          "image": "https://urartu.site/assets/images/ensemble-urartu.webp",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ул. Таганрогская, 161 (Дом Офицеров)",
+            "addressLocality": "Ростов-на-Дону",
+            "addressCountry": "RU"
+          }
+        },
+        {
+          "@type": "DanceSchool",
+          "@id": "https://urartu.site/info.html#filial-izmailovskiy",
+          "name": "Ансамбль армянского танца «Урарту» — Филиал Суворовский",
+          "telephone": "+7-988-257-19-29",
+          "url": "https://urartu.site/info.html",
+          "image": "https://urartu.site/assets/images/ensemble-urartu.webp",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "пер. Измайловский, 4 (Школа №75)",
+            "addressLocality": "Ростов-на-Дону",
+            "addressCountry": "RU"
+          }
+        },
+        {
+          "@type": "DanceSchool",
+          "@id": "https://urartu.site/info.html#filial-shaumyana",
+          "name": "Ансамбль армянского танца «Урарту» — Филиал Центр",
+          "telephone": "+7-988-257-19-29",
+          "url": "https://urartu.site/info.html",
+          "image": "https://urartu.site/assets/images/ensemble-urartu.webp",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ул. Шаумяна, 94 (Дом культуры)",
+            "addressLocality": "Ростов-на-Дону",
+            "addressCountry": "RU"
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body>
-    <div class="grain-overlay"></div>
+    <div class="grain-overlay" aria-hidden="true"></div>
+
     <!-- Блок: filials -->
     <section id="filials">
         <!-- ===== ДЕКОРАТИВНЫЕ ГРАНАТЫ ===== -->
         <img class="filials__decoration filials__decoration--pomegranate-1 decoration"
-            src="assets/images/pomegranate-1.webp" alt="Гранат">
+            src="assets/images/pomegranate-1.webp" alt="" aria-hidden="true" loading="lazy">
         <img class="filials__decoration filials__decoration--pomegranate-2 decoration"
-            src="assets/images/pomegranate-2.webp" alt="Гранат">
+            src="assets/images/pomegranate-2.webp" alt="" aria-hidden="true" loading="lazy">
 
         <div class="filials__content">
             <!-- Заголовок блока -->
             <div class="filials-section__header">
-                <h2 class="filials-section__title">
+                <h1 class="filials-section__title">
                     <span class="filials-section__title-part">Наши</span>
                     <span class="filials-section__title-part">Филиалы</span>
-                </h2>
+                </h1>
 
-                <!-- Блок групп (элемент основного блока, но лучше сделать вложенным блоком, если сложный) -->
-                <div class="filials-section__groups">
+                <!-- Блок групп по возрастам -->
+                <div class="filials-section__groups" aria-label="Возрастные группы">
                     <div class="filials-section__group-item">
-                        <span class="filials-section__group-dot red"></span>
+                        <span class="filials-section__group-dot red" aria-hidden="true"></span>
                         <span class="filials-section__group-age">(14+)</span>
                         <span class="filials-section__group-name">старшая</span>
                     </div>
                     <div class="filials-section__group-item">
-                        <span class="filials-section__group-dot yellow"></span>
+                        <span class="filials-section__group-dot yellow" aria-hidden="true"></span>
                         <span class="filials-section__group-age">(9-13)</span>
                         <span class="filials-section__group-name">средняя</span>
                     </div>
                     <div class="filials-section__group-item">
-                        <span class="filials-section__group-dot green"></span>
+                        <span class="filials-section__group-dot green" aria-hidden="true"></span>
                         <span class="filials-section__group-age">(7-9)</span>
                         <span class="filials-section__group-name">младшая</span>
                     </div>
                 </div>
             </div>
+
             <p class="filials__city">г. Ростов-на-Дону</p>
+
             <!-- Блок списка филиалов -->
             <div class="filials-section__cards">
+                <!-- Филиал 1 -->
                 <a href="https://yandex.ru/maps/?um=constructor%3Aece54fbc80fcc3bd7a28978d5a01cb16ceb60d30ceb579a1d64f8fab81e5902e&amp;source=constructorStatic"
-                    target="_blank">
+                    target="_blank" rel="noopener noreferrer" title="Открыть карту филиала на Таганрогской">
                     <div class="filials-section__card">
                         <div class="filials-section__card-map filials-section__card-map--color-1">
                             <img src="https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3Aece54fbc80fcc3bd7a28978d5a01cb16ceb60d30ceb579a1d64f8fab81e5902e&amp;width=350&amp;height=200&amp;lang=ru_RU"
-                                alt="" style="border: 0;" />
+                                alt="Карта филиала: Ростов-на-Дону, ул. Таганрогская 161 (Дом Офицеров)"
+                                style="border: 0;" />
                         </div>
                         <div class="filials-section__card-info__wrapper">
                             <div class="filials-section__card-address"><b>Таганрогская 161, <br>Дом Офицеров</b></div>
-                            <div class="filials-section__card-schedule">Суббота / Воскресенье </div>
-                            <div class="filials-section__card-colors__wrapper">
-                                <div class="filials-section__card-color red"></div>
-                                <div class="filials-section__card-color yellow"></div>
-                                <div class="filials-section__card-color green"></div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="https://yandex.ru/maps/?um=constructor%3A6dc34ad125ba02202c4a61613260cb11fdbab40c1a2d60afd7fc7b18eebd1723&amp;source=constructorStatic"
-                    target="_blank">
-                    <div class="filials-section__card">
-                        <div class="filials-section__card-map filials-section__card-map--color-2"><img
-                                src="https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3A6dc34ad125ba02202c4a61613260cb11fdbab40c1a2d60afd7fc7b18eebd1723&amp;width=350&amp;height=200&amp;lang=ru_RU"
-                                alt="" style="border: 0;" /></div>
-                        <div class="filials-section__card-info__wrapper">
-                            <div class="filials-section__card-address"><b>Измайловский 4, <br>Школа №75</b></div>
-                            <div class="filials-section__card-schedule">Вторник / Четверг</div>
-                            <div class="filials-section__card-colors__wrapper">
-                                <div class="filials-section__card-color yellow"></div>
-                                <div class="filials-section__card-color green"></div>
+                            <div class="filials-section__card-schedule">Суббота / Воскресенье</div>
+                            <div class="filials-section__card-colors__wrapper"
+                                aria-label="Доступные группы: старшая, средняя, младшая">
+                                <div class="filials-section__card-color red" title="Старшая группа (14+)"></div>
+                                <div class="filials-section__card-color yellow" title="Средняя группа (9-13)"></div>
+                                <div class="filials-section__card-color green" title="Младшая группа (7-9)"></div>
                             </div>
                         </div>
                     </div>
                 </a>
 
-                <a href="https://yandex.ru/maps/?um=constructor%3Add82e42ed9932e65891b05e396d4c0421c9d9c8c8791d399bacf73d52fa6602b&amp;source=constructorStatic"
-                    target="_blank">
+                <!-- Филиал 2 -->
+                <a href="https://yandex.ru/maps/?um=constructor%3A6dc34ad125ba02202c4a61613260cb11fdbab40c1a2d60afd7fc7b18eebd1723&amp;source=constructorStatic"
+                    target="_blank" rel="noopener noreferrer" title="Открыть карту филиала на Измайловском">
                     <div class="filials-section__card">
-                        <div class="filials-section__card-map filials-section__card-map--color-3"><img
-                                src="https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3Add82e42ed9932e65891b05e396d4c0421c9d9c8c8791d399bacf73d52fa6602b&amp;width=350&amp;height=200&amp;lang=ru_RU"
-                                alt="" style="border: 0;" /></div>
+                        <div class="filials-section__card-map filials-section__card-map--color-2">
+                            <img src="https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3A6dc34ad125ba02202c4a61613260cb11fdbab40c1a2d60afd7fc7b18eebd1723&amp;width=350&amp;height=200&amp;lang=ru_RU"
+                                alt="Карта филиала: Ростов-на-Дону, пер. Измайловский 4 (Школа №75)"
+                                style="border: 0;" />
+                        </div>
+                        <div class="filials-section__card-info__wrapper">
+                            <div class="filials-section__card-address"><b>Измайловский 4, <br>Школа №75</b></div>
+                            <div class="filials-section__card-schedule">Вторник / Четверг</div>
+                            <div class="filials-section__card-colors__wrapper"
+                                aria-label="Доступные группы: средняя, младшая">
+                                <div class="filials-section__card-color yellow" title="Средняя группа (9-13)"></div>
+                                <div class="filials-section__card-color green" title="Младшая группа (7-9)"></div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Филиал 3 -->
+                <a href="https://yandex.ru/maps/?um=constructor%3Add82e42ed9932e65891b05e396d4c0421c9d9c8c8791d399bacf73d52fa6602b&amp;source=constructorStatic"
+                    target="_blank" rel="noopener noreferrer" title="Открыть карту филиала на Шаумяна">
+                    <div class="filials-section__card">
+                        <div class="filials-section__card-map filials-section__card-map--color-3">
+                            <img src="https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3Add82e42ed9932e65891b05e396d4c0421c9d9c8c8791d399bacf73d52fa6602b&amp;width=350&amp;height=200&amp;lang=ru_RU"
+                                alt="Карта филиала: Ростов-на-Дону, ул. Шаумяна 94 (Дом культуры)" style="border: 0;" />
+                        </div>
                         <div class="filials-section__card-info__wrapper">
                             <div class="filials-section__card-address"><b>Шаумяна 94, <br>Дом культуры</b></div>
                             <div class="filials-section__card-schedule">Пятница / Воскресенье</div>
-                            <div class="filials-section__card-colors__wrapper">
-                                <div class="filials-section__card-color green"></div>
+                            <div class="filials-section__card-colors__wrapper" aria-label="Доступные группы: младшая">
+                                <div class="filials-section__card-color green" title="Младшая группа (7-9)"></div>
                             </div>
                         </div>
                     </div>
@@ -107,17 +195,20 @@
             </div>
         </div>
     </section>
+
+    <!-- Блок: contacts -->
     <section id="contacts">
         <!-- ===== ДЕКОРАТИВНЫЕ ОБЛАКА ===== -->
-        <div class="contacts__clouds">
-            <img class="contacts__cloud--backgorund" src="./assets/images/white-clouds-background.svg" alt="">
-            <img class="contacts__cloud contacts__cloud--1" src="assets/images/cloud.webp" alt="Облако">
-            <img class="contacts__cloud contacts__cloud--2" src="assets/images/cloud.webp" alt="Облако">
-            <img class="contacts__cloud contacts__cloud--3" src="assets/images/cloud.webp" alt="Облако">
-            <img class="contacts__cloud contacts__cloud--4" src="assets/images/cloud.webp" alt="Облако">
-            <img class="contacts__cloud contacts__cloud--5" src="assets/images/cloud.webp" alt="Облако">
-            <img class="contacts__cloud contacts__cloud--6" src="assets/images/cloud.webp" alt="Облако">
-            <img class="contacts__cloud contacts__cloud--7" src="assets/images/cloud.webp" alt="Облако">
+        <div class="contacts__clouds" aria-hidden="true">
+            <img class="contacts__cloud--backgorund" src="./assets/images/white-clouds-background.svg" alt=""
+                loading="lazy">
+            <img class="contacts__cloud contacts__cloud--1" src="assets/images/cloud.webp" alt="" loading="lazy">
+            <img class="contacts__cloud contacts__cloud--2" src="assets/images/cloud.webp" alt="" loading="lazy">
+            <img class="contacts__cloud contacts__cloud--3" src="assets/images/cloud.webp" alt="" loading="lazy">
+            <img class="contacts__cloud contacts__cloud--4" src="assets/images/cloud.webp" alt="" loading="lazy">
+            <img class="contacts__cloud contacts__cloud--5" src="assets/images/cloud.webp" alt="" loading="lazy">
+            <img class="contacts__cloud contacts__cloud--6" src="assets/images/cloud.webp" alt="" loading="lazy">
+            <img class="contacts__cloud contacts__cloud--7" src="assets/images/cloud.webp" alt="" loading="lazy">
         </div>
 
         <h2 class="contacts-section__title">
@@ -126,13 +217,13 @@
         </h2>
 
         <!-- Фоновые декорации -->
-        <div class="footer__stars" src="assets/images/stars.webp" alt="Звёзды"></div>
+        <div class="footer__stars" aria-hidden="true"></div>
 
         <!-- Блок с контактами -->
         <div class="footer__contacts">
-            <a href="tel:+7(988)257-19-29" class="footer__cta-button">
-                <svg class="footer__cta-icon width=" 50" height="50" viewBox="0 0 50 50" fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg">
+            <a href="tel:+79882571929" class="footer__cta-button" title="Позвонить в ансамбль Урарту">
+                <svg class="footer__cta-icon" width="50" height="50" viewBox="0 0 50 50" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path
                         d="M31.4624 35.9452L35.1567 32.2491C35.7253 31.6736 36.4022 31.2163 37.1483 30.9045C37.8946 30.5927 38.6952 30.4324 39.5037 30.4324C40.3126 30.4324 41.1131 30.5927 41.8595 30.9045C42.6056 31.2163 43.2825 31.6736 43.8508 32.2491L48.184 36.5843C48.7592 37.1529 49.2161 37.8295 49.5278 38.5762C49.8394 39.3225 50 40.1239 50 40.9328C50 41.742 49.8394 42.5432 49.5278 43.2898C49.2161 44.0362 48.7592 44.7128 48.184 45.2814L46.2118 47.2821C44.853 48.6548 43.0955 49.5635 41.1901 49.8778C39.2846 50.1921 37.3285 49.8967 35.6011 49.033C20.7358 41.3777 8.62792 29.2744 0.963632 14.4096C0.0995819 12.6795 -0.193796 10.72 0.125636 8.81263C0.445068 6.90526 1.36087 5.14818 2.7414 3.79438L4.71343 1.79374C5.86875 0.644929 7.43155 0 9.06049 0C10.6894 0 12.2522 0.644929 13.4075 1.79374L17.7685 6.1566C18.9169 7.31241 19.5614 8.87565 19.5614 10.5053C19.5614 12.1349 18.9169 13.6981 17.7685 14.8539L14.0742 18.5499C16.5169 21.8553 19.2 24.9757 22.1016 27.8862C24.9865 30.7772 28.0881 33.4437 31.379 35.8618L31.4624 35.9452Z"
                         fill="currentColor" />
@@ -142,50 +233,67 @@
 
             <!-- Социальные сети -->
             <div class="footer__socials">
-                <a href="https://www.instagram.com/ensemble__urartu" class="footer__social-link" aria-label="Instagram">
+                <a href="https://www.instagram.com/ensemble__urartu" target="_blank" rel="noopener noreferrer"
+                    class="footer__social-link" aria-label="Инстаграм ансамбля Урарту">
                     <img src="./assets/images/instagram.svg" alt="Instagram">
                 </a>
-                <a href="https://t.me/urartustsil" class="footer__social-link" aria-label="Telegram">
+                <a href="https://t.me/urartustsil" target="_blank" rel="noopener noreferrer" class="footer__social-link"
+                    aria-label="Телеграм-канал ансамбля Урарту">
                     <img src="./assets/images/telegram.svg" alt="Telegram">
                 </a>
-                <a href="#" class="footer__social-link footer__social-link-tiktok" aria-label="TikTok">
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                    class="footer__social-link footer__social-link-tiktok" aria-label="TikTok ансамбля Урарту">
                     <img src="./assets/images/tiktok.svg" alt="TikTok">
                 </a>
-                <a href="https://ru.pinterest.com/ensemble_urartu" class="footer__social-link" aria-label="Pinterest">
+                <a href="https://ru.pinterest.com/ensemble_urartu" target="_blank" rel="noopener noreferrer"
+                    class="footer__social-link" aria-label="Пинтерест ансамбля Урарту">
                     <img src="./assets/images/pinterest.svg" alt="Pinterest">
                 </a>
             </div>
         </div>
 
         <!-- Основное содержимое -->
-        <div>
+        <div class="contacts__bottom">
             <div class="footer__inner">
                 <div class="footer__end-immages">
-                    <img class="footer__moon" src="assets/images/moon.webp" alt="Луна">
-                    <!-- Фото ансамбля -->
-                    <img class="footer__ensemble-image" src="assets/images/ensemble-urartu.webp" alt="Ансамбль Урарту">
+                    <img class="footer__moon" src="assets/images/moon.webp" alt="" aria-hidden="true" loading="lazy">
+                    <!-- Фото ансамбля загружаем напрямую для точности верстки -->
+                    <img class="footer__ensemble-image" src="assets/images/ensemble-urartu.webp"
+                        alt="Ансамбль армянского танца Урарту в Ростове-на-Дону">
                 </div>
             </div>
             <footer class="developers__footer">
-                <div class="developers__icons">
-                    <a class="developers__footer-link developers__footer--what" href="#">
-                        <img class="developers__footer-icon" src="./assets/images/WHAT.svg" alt="Иконка">
+                <div class="rights__block">
+                    <a class="github__link" href="https://github.com/whatrushki/urartu" target="_blank"
+                        rel="noopener noreferrer" aria-label="Репозиторий проекта на GitHub">
+                        <img src="./assets/images/github.svg" alt="GitHub">
                     </a>
-                    <img class="developers__footer--x" src="./assets/images/x.svg" alt="#">
-                    <a class="developers__footer-link" href="#">
-                        <img class="developers__footer-icon" src="./assets/images/URARTU Team.svg" alt="Иконка">
+                    <div class="rights__text">
+                        <p>All rights reserved</p>
+                        <p>Copyright (c) 2026  WHAT Technologies</p>
+                    </div>
+                </div>
+
+                <div class="developers__icons">
+                    <a class="developers__footer-link developers__footer--what" href="#" aria-label="Студия WHAT">
+                        <img class="developers__footer-icon" src="./assets/images/WHAT.svg" alt="WHAT studio">
+                    </a>
+                    <img class="developers__footer--x" src="./assets/images/x.svg" alt="x" aria-hidden="true">
+                    <a class="developers__footer-link" href="#" aria-label="Команда Урарту">
+                        <img class="developers__footer-icon" src="./assets/images/URARTU Team.svg" alt="URARTU Team">
                     </a>
                 </div>
             </footer>
         </div>
     </section>
-    
+
     <!-- Lenis smooth scroll -->
     <script src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js"></script>
     <!-- GSAP -->
     <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
+    <!-- Анимации -->
     <script src="./scripts/animations/hero.js"></script>
     <script src="./scripts/animations/history.js"></script>
     <script src="./scripts/animations/symbols.js"></script>
@@ -195,6 +303,7 @@
     <script src="./scripts/animations/ensemble.js"></script>
     <script src="./scripts/animations/developers.js"></script>
     <script src="./scripts/animations/decorations.js"></script>
+    <script src="./scripts/animations/text.js"></script>
     <script src="./scripts/animations/contacts.js"></script>
     <script src="./scripts/main.js"></script>
 </body>
