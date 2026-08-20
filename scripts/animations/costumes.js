@@ -33,8 +33,6 @@ function initCostumes() {
         ease: "none",
     });
 
-    ScrollTrigger.refresh();
-
     gsap.fromTo('.costumes__list',
         {
             y: '14vw',

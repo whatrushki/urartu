@@ -232,11 +232,11 @@ function animateDancesText() {
 
 
     // Названия карточек
-    // animateText(".dances__card-label", {
-    //     y: 30,
-    //     duration: 0.7,
-    //     delay: 0.12
-    // });
+    animateText(".dances__card-label", {
+        y: 30,
+        duration: 0.7,
+        delay: 0.12
+    });
 
 
     // Финальная цитата
@@ -400,7 +400,7 @@ const reveal = {
    FILIALS
    ========================================================= */
 
-function initFilials() {
+function animateFilialsText() {
 
     const section = document.querySelector("#filials");
 
@@ -533,7 +533,7 @@ function initFilials() {
    CONTACTS
    ========================================================= */
 
-function initContacts() {
+function animateContactsText() {
 
     const section = document.querySelector("#contacts");
 
@@ -729,9 +729,9 @@ function initTextAnimations() {
 
     animateDevelopersText();
 
-    initFilials();
+    animateFilialsText();
 
-    initContacts();
+    // animateContactsText();
 
     ScrollTrigger.refresh();
 }

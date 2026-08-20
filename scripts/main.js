@@ -52,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // На info.html нужны только эти секции:
   initSafe(initDecorations);
   initSafe(initContacts);
-  initSafe(initTextAnimations);
   initSafe(initHero);
   initSafe(initHistory);
   initSafe(initSymbols);
@@ -62,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSafe(initEnsemble);
   initSafe(initDevelopers);
   initSafe(initContacts);
+  initSafe(initTextAnimations);
 
   ScrollTrigger.refresh();
   lenis.resize();
