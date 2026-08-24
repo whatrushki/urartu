@@ -9,7 +9,7 @@ ScrollTrigger.config({
 });
 
 // Для предотвращения дерганий адресной строки на iOS Safari:
-if (isTouchDevice) {
+if (ScrollTrigger.isTouch) {
   ScrollTrigger.normalizeScroll({
     allowNestedScroll: true
   });
