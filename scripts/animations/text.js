@@ -14,37 +14,38 @@ const textDefaults = {
 /* =========================================================
    ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ
 ========================================================= */
-const isMobile = window.innerWidth < 768;
 
 function animateText(selector, options = {}) {
     const elements = document.querySelectorAll(selector);
+
     if (!elements.length) return;
 
-    elements.forEach((element, index) => {
-        gsap.fromTo(element,
-            {
-                opacity: 0,
-                y: isMobile ? 15 : (options.y ?? textDefaults.y) // Меньше сдвиг по Y на телефоне
-            },
-            {
-                opacity: 1,
-                y: 0,
-                // На мобилке анимация должна быть быстрой (0.4-0.5s вместо 0.9s)
-                duration: isMobile ? 0.45 : (options.duration ?? textDefaults.duration),
-                delay: isMobile ? 0 : (options.delay ? options.delay * index : 0),
-                ease: "power2.out",
-                clearProps: "transform",
+    gsap.set(elements, {
+        opacity: 0,
+        y: options.y ?? textDefaults.y
+    });
 
-                scrollTrigger: {
-                    trigger: element,
-                    // На мобилке триггерим чуть раньше (92% высоты экрана)
-                    start: isMobile ? "top 92%" : (options.start ?? "top 88%"),
-                    toggleActions: "play none none none",
-                    once: true,
-                    invalidateOnRefresh: true
-                }
+    elements.forEach((element, index) => {
+
+        gsap.to(element, {
+            opacity: 1,
+            y: 0,
+
+            duration: options.duration ?? textDefaults.duration,
+            delay: options.delay
+                ? options.delay * index
+                : 0,
+
+            ease: options.ease ?? textDefaults.ease,
+
+            scrollTrigger: {
+                trigger: element,
+                start: options.start ?? "top 85%",
+                toggleActions: "play none none none",
+                once: true
             }
-        );
+        });
+
     });
 }
 

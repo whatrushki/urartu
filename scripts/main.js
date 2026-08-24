@@ -8,13 +8,6 @@ ScrollTrigger.config({
   autoRefreshEvents: "visibilitychange,DOMContentLoaded,load" // Не делать лишних refresh при скролле
 });
 
-// Для предотвращения дерганий адресной строки на iOS Safari:
-if (ScrollTrigger.isTouch) {
-  ScrollTrigger.normalizeScroll({
-    allowNestedScroll: true
-  });
-}
-
 // ==========================================
 // 2️⃣ ИНИЦИАЛИЗАЦИЯ LENIS
 // ==========================================
@@ -22,7 +15,6 @@ const lenis = new Lenis({
   duration: 1.2,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
   smoothWheel: true,
-  syncTouch: true,
   wheelMultiplier: 1.5,
 });
 
@@ -241,7 +233,10 @@ function startApplication() {
   runSafe(initDevelopers);
   runSafe(initDecorations);
   runSafe(initContacts);
-  runSafe(initTextAnimations);
+
+  if (window.innerWidth > 768) {
+    runSafe(initTextAnimations);
+  }
 
   // Двойной RAF для идеального расчета ScrollTrigger
   requestAnimationFrame(() => {
