@@ -262,4 +262,9 @@ section {
     .preloader-logo-svg circle {
         stroke-width: 0.4px !important;
     }
+
+    .grain-overlay {
+        animation: none !important;
+        opacity: 0.12 !important;
+    }
 }

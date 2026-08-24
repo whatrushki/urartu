@@ -4,8 +4,16 @@
 gsap.registerPlugin(ScrollTrigger);
 
 ScrollTrigger.config({
-  ignoreMobileResize: true,
+  ignoreMobileResize: true, // Игнорировать скачки адресной строки
+  autoRefreshEvents: "visibilitychange,DOMContentLoaded,load" // Не делать лишних refresh при скролле
 });
+
+// Для предотвращения дерганий адресной строки на iOS Safari:
+if (isTouchDevice) {
+  ScrollTrigger.normalizeScroll({
+    allowNestedScroll: true
+  });
+}
 
 // ==========================================
 // 2️⃣ ИНИЦИАЛИЗАЦИЯ LENIS
@@ -14,6 +22,7 @@ const lenis = new Lenis({
   duration: 1.2,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
   smoothWheel: true,
+  syncTouch: true,
   wheelMultiplier: 1.5,
 });
 
@@ -83,7 +92,6 @@ function startInfiniteLogoAnimation() {
 
   logoLoopTimeline
     .to(logoPaths, {
-      strokeWidth: '4vw',
       strokeDashoffset: 0,
       duration: 1.6,
       ease: "power2.inOut",
