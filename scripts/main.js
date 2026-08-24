@@ -11,25 +11,33 @@ ScrollTrigger.config({
 // ==========================================
 // 2️⃣ ИНИЦИАЛИЗАЦИЯ LENIS
 // ==========================================
-const lenis = new Lenis({
-  duration: 1.2,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-  smoothWheel: true,
-  wheelMultiplier: 1.5,
-});
 
-lenis.on('scroll', ScrollTrigger.update);
-ScrollTrigger.addEventListener('refresh', () => lenis.resize());
+// Проверяем: мобилка или ПК
+const isMobile = window.innerWidth <= 768 || 'ontouchstart' in window;
 
-gsap.ticker.add((time) => {
-  lenis.raf(time * 1000);
-});
-gsap.ticker.lagSmoothing(0);
+// Инициализируем Lenis ТОЛЬКО если это компьютер
+let lenis = null;
 
-// Блокируем скролл на старте
-lenis.stop();
-document.documentElement.style.overflow = 'hidden';
-document.body.style.overflow = 'hidden';
+if (!isMobile) {
+  lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smoothWheel: true,
+  });
+
+  lenis.on('scroll', ScrollTrigger.update);
+  ScrollTrigger.addEventListener('refresh', () => lenis?.resize());
+
+  gsap.ticker.add((time) => {
+    lenis?.raf(time * 1000);
+  });
+  gsap.ticker.lagSmoothing(0);
+
+  // Блокируем скролл на старте
+  lenis.stop();
+  document.documentElement.style.overflow = 'hidden';
+  document.body.style.overflow = 'hidden';
+}
 
 // ==========================================
 // 3️⃣ УМНЫЙ ФИЛЬТР КРИТИЧЕСКИХ ИЗОБРАЖЕНИЙ
@@ -216,7 +224,10 @@ function startApplication() {
   // Разблокируем скролл
   document.documentElement.style.overflow = '';
   document.body.style.overflow = '';
-  lenis.start();
+
+  if (!isMobile) {
+    lenis?.start();
+  }
 
   const runSafe = (fn) => {
     try { if (typeof fn === 'function') fn(); } catch (e) { console.warn(e); }
