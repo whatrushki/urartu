@@ -26,6 +26,7 @@ if (!isMobile) {
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     smoothWheel: true,
   });
+  window.lenis = lenis;
 
   lenis.on('scroll', ScrollTrigger.update);
   ScrollTrigger.addEventListener('refresh', () => lenis?.resize());
@@ -251,13 +252,22 @@ function startApplication() {
     runSafe(initTextAnimations);
   }
 
-  // Двойной RAF для идеального расчета ScrollTrigger
+  // Гарантированная калибровка ScrollTrigger и Lenis
+  const refreshAll = () => {
+    ScrollTrigger.refresh();
+    lenis?.resize();
+  };
+
   requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      ScrollTrigger.refresh();
-      lenis.resize();
-    });
+    requestAnimationFrame(refreshAll);
   });
+
+  // Дополнительная калибровка после завершения CSS-переходов и декодирования ассетов
+  setTimeout(refreshAll, 350);
+  setTimeout(refreshAll, 1200);
+
+  // Калибровка при первом движении колеса мыши
+  window.addEventListener('wheel', refreshAll, { once: true, passive: true });
 }
 
 // Старт
@@ -274,10 +284,33 @@ window.addEventListener('resize', () => {
   resizeTimer = setTimeout(() => {
     ScrollTrigger.refresh();
     lenis?.resize();
-  }, 250);
+  }, 200);
 });
 
 window.addEventListener('load', () => {
   ScrollTrigger.refresh();
   lenis?.resize();
 });
+
+// Автоматический пересчет высоты при любых изменениях DOM (картинки, шрифты, динамические блоки)
+if (typeof ResizeObserver !== 'undefined') {
+  let contentResizeTimer;
+  const pageResizeObserver = new ResizeObserver(() => {
+    clearTimeout(contentResizeTimer);
+    contentResizeTimer = setTimeout(() => {
+      ScrollTrigger.refresh();
+      lenis?.resize();
+    }, 100);
+  });
+
+  const observeElements = () => {
+    if (document.documentElement) pageResizeObserver.observe(document.documentElement);
+    if (document.body) pageResizeObserver.observe(document.body);
+  };
+
+  if (document.body) {
+    observeElements();
+  } else {
+    document.addEventListener('DOMContentLoaded', observeElements);
+  }
+}
