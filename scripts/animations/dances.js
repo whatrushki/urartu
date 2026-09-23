@@ -17,7 +17,7 @@ function initDances() {
                 trigger: '.dances__curtain--left',
                 start: 'top bottom',
                 end: 'top 40%',
-                scrub: 1
+                scrub: true
             }
         });
 
@@ -36,7 +36,7 @@ function initDances() {
                 trigger: '.dances__curtain--right',
                 start: 'top bottom',
                 end: 'top 40%',
-                scrub: 1
+                scrub: true
             }
         });
 
@@ -51,7 +51,7 @@ function initDances() {
                 trigger: '.dances__card-1',
                 start: 'top bottom',
                 end: 'top 40%',
-                scrub: 1
+                scrub: true
             }
         });
 
@@ -66,7 +66,7 @@ function initDances() {
                 trigger: '.dances__card-2',
                 start: 'top bottom',
                 end: 'top 40%',
-                scrub: 1
+                scrub: true
             }
         });
 }

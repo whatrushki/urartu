@@ -8,59 +8,79 @@ function initEnsemble() {
     const cloud4 = document.querySelector(".ensemble__cloud--4");
     const moon = document.querySelector(".ensemble__moon");
 
+    const tweens = [];
+
     if (moon) {
-        gsap.fromTo(moon, {
-            rotation: '-=10deg'
-        }, {
-            rotation: '+=10deg',
-            duration: 4,
-            ease: "sine.inOut",
-            repeat: -1,
-            yoyo: true
-        });
+        tweens.push(
+            gsap.fromTo(moon, {
+                rotation: '-=10deg'
+            }, {
+                rotation: '+=10deg',
+                duration: 4,
+                ease: "sine.inOut",
+                repeat: -1,
+                yoyo: true
+            })
+        );
     }
 
     if (cloud1) {
-        gsap.to(cloud1, {
-            x: "-=8vw",
-            duration: 5,
-            ease: "sine.inOut",
-            repeat: -1,
-            yoyo: true
-        });
+        tweens.push(
+            gsap.to(cloud1, {
+                x: "-=8vw",
+                duration: 5,
+                ease: "sine.inOut",
+                repeat: -1,
+                yoyo: true
+            })
+        );
     }
 
     if (cloud2) {
-        gsap.to(cloud2, {
-            x: "+=5vw",
-            duration: 4,
-            ease: "sine.inOut",
-            repeat: -1,
-            yoyo: true
-        });
+        tweens.push(
+            gsap.to(cloud2, {
+                x: "+=5vw",
+                duration: 4,
+                ease: "sine.inOut",
+                repeat: -1,
+                yoyo: true
+            })
+        );
     }
 
     if (cloud3) {
-        gsap.to(cloud3, {
-            x: "+=10vw",
-            duration: 6,
-            delay: 1.3,
-            ease: "sine.inOut",
-            repeat: -1,
-            yoyo: true
-        });
+        tweens.push(
+            gsap.to(cloud3, {
+                x: "+=10vw",
+                duration: 6,
+                delay: 1.3,
+                ease: "sine.inOut",
+                repeat: -1,
+                yoyo: true
+            })
+        );
     }
 
     if (cloud4) {
-        gsap.to(cloud4, {
-            x: "-=7vw",
-            duration: 4.5,
-            delay: 2.1,
-            ease: "sine.inOut",
-            repeat: -1,
-            yoyo: true
-        });
+        tweens.push(
+            gsap.to(cloud4, {
+                x: "-=7vw",
+                duration: 4.5,
+                delay: 2.1,
+                ease: "sine.inOut",
+                repeat: -1,
+                yoyo: true
+            })
+        );
     }
+
+    ScrollTrigger.create({
+        trigger: element,
+        onEnter: () => tweens.forEach(t => t.play()),
+        onLeave: () => tweens.forEach(t => t.pause()),
+        onEnterBack: () => tweens.forEach(t => t.resume()),
+        onLeaveBack: () => tweens.forEach(t => t.pause())
+    });
 
     const quote = document.querySelector(".ensemble__quote-3");
     const star = quote?.querySelector(".ensemble__quote-star");
@@ -72,7 +92,7 @@ function initEnsemble() {
                 trigger: quote,
                 start: "top 90%",
                 end: "bottom 40%",
-                scrub: 1
+                scrub: true
             }
         });
 

@@ -13,7 +13,7 @@ function initDevelopers() {
                 trigger: '.developers__content',
                 start: 'top bottom',
                 end: 'top 50%',
-                scrub: 1
+                scrub: true
             }
         });
 
@@ -28,7 +28,7 @@ function initDevelopers() {
                 trigger: '.developers__content',
                 start: 'top bottom',
                 end: 'top 50%',
-                scrub: 1
+                scrub: true
             }
         });
 
@@ -43,7 +43,7 @@ function initDevelopers() {
                 trigger: '.developers__content',
                 start: 'top bottom',
                 end: 'top 60%',
-                scrub: 1
+                scrub: true
             }
         });
 }

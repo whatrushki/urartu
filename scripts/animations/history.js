@@ -9,7 +9,7 @@ function initHistory() {
             trigger: '.history__date-block',
             start: 'top bottom',
             end: 'top 50%',
-            scrub: 1
+            scrub: true
         }
     });
 
@@ -20,7 +20,7 @@ function initHistory() {
             trigger: '.history__date-block',
             start: 'top bottom',
             end: 'top 50%',
-            scrub: 1
+            scrub: true
         }
     });
 
@@ -35,7 +35,7 @@ function initHistory() {
                 trigger: '.history__title--second',
                 start: 'top bottom',
                 end: 'bottom 40%',
-                scrub: 1
+                scrub: true
             }
         });
 
@@ -52,7 +52,7 @@ function initHistory() {
                 trigger: '.history__text--secondary',
                 start: 'bottom bottom',
                 end: 'bottom 70%',
-                scrub: 1
+                scrub: true
             }
         });
 }

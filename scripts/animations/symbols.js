@@ -17,7 +17,7 @@ function initSymbols() {
                 trigger: '.symbols__title',
                 start: 'bottom bottom',
                 end: 'bottom 50%',
-                scrub: 1
+                scrub: true
             }
         }
     );
@@ -36,7 +36,7 @@ function initSymbols() {
                     trigger: carpet,
                     start: "top bottom",
                     end: "bottom top",
-                    scrub: 1
+                    scrub: true
                 }
             });
 
@@ -54,7 +54,7 @@ function initSymbols() {
                     trigger: el,
                     start: "top bottom",
                     end: "bottom 80%",
-                    scrub: 1
+                    scrub: true
                 }
             });
     });

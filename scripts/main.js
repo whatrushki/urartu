@@ -13,7 +13,9 @@ ScrollTrigger.config({
 // ==========================================
 
 // Проверяем: мобилка или ПК
-const isMobile = window.innerWidth <= 768 || 'ontouchstart' in window;
+const isMobile = window.matchMedia(
+  '(max-width: 768px), (pointer: coarse)'
+).matches;
 
 // Инициализируем Lenis ТОЛЬКО если это компьютер
 let lenis = null;
@@ -31,7 +33,7 @@ if (!isMobile) {
   gsap.ticker.add((time) => {
     lenis?.raf(time * 1000);
   });
-  gsap.ticker.lagSmoothing(0);
+  gsap.ticker.lagSmoothing(500, 33);
 
   // Блокируем скролл на старте
   lenis.stop();
@@ -273,4 +275,9 @@ window.addEventListener('resize', () => {
     ScrollTrigger.refresh();
     lenis?.resize();
   }, 250);
+});
+
+window.addEventListener('load', () => {
+  ScrollTrigger.refresh();
+  lenis?.resize();
 });

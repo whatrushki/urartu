@@ -5,7 +5,7 @@ function initDecorations() {
         const base = gsap.getProperty(el, "rotation");
         const swing = gsap.utils.random(3, 6);
 
-        gsap.fromTo(el,
+        const tween = gsap.fromTo(el,
             { rotation: base - swing },
             {
                 rotation: base + swing,
@@ -16,5 +16,13 @@ function initDecorations() {
                 yoyo: true
             }
         );
+
+        ScrollTrigger.create({
+            trigger: el,
+            onEnter: () => tween.play(),
+            onLeave: () => tween.pause(),
+            onEnterBack: () => tween.resume(),
+            onLeaveBack: () => tween.pause()
+        });
     });
 }

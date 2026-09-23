@@ -3,7 +3,8 @@
     display: flex;
     flex-direction: column;
     background-color: var(--color-bg-cherry);
-    overflow: hidden;
+    overflow-x: clip;
+    overflow-y: visible;
 }
 
 .developers__inner {
