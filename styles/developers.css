@@ -41,7 +41,7 @@
     width: 15vw;
     height: auto;
     object-fit: contain;
-    transform: translate(-1vw);
+    transform: translateX(-1vw);
 }
 
 .developers__team-image {
@@ -56,14 +56,6 @@
     color: var(--color-fg-cherry-accent);
     font-size: 3vw;
     transform: rotate(-10deg) translate(4vw, -1vw);
-}
-
-.developers__socials {
-    display: flex;
-    flex-direction: row;
-    gap: 2vw;
-    font-family: var(--font-quote);
-    transform: translateY(-2vw);
 }
 
 .developers__social-link {
