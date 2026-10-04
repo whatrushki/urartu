@@ -2,6 +2,9 @@ function initDances() {
     const element = document.querySelector("#dances");
     if (!element) return;
 
+    const isMobile = window.matchMedia('(max-width: 768px), (pointer: coarse)').matches;
+    const scrubVal = isMobile ? true : 1;
+
     gsap.fromTo('.dances__curtain--left',
         {
             y: '-2vw',
@@ -12,12 +15,12 @@ function initDances() {
             y: 0,
             x: '-0.5vw',
             scale: 1,
-            ease: 'power2.out',
+            ease: 'none',
             scrollTrigger: {
                 trigger: '.dances__curtain--left',
                 start: 'top bottom',
                 end: 'top 40%',
-                scrub: 1
+                scrub: scrubVal
             }
         });
 
@@ -31,12 +34,12 @@ function initDances() {
             y: 0,
             x: '0.5vw',
             scale: 1,
-            ease: 'power2.out',
+            ease: 'none',
             scrollTrigger: {
                 trigger: '.dances__curtain--right',
                 start: 'top bottom',
                 end: 'top 40%',
-                scrub: 1
+                scrub: scrubVal
             }
         });
 
@@ -46,12 +49,12 @@ function initDances() {
         },
         {
             x: 0,
-            ease: 'power2.out',
+            ease: 'none',
             scrollTrigger: {
                 trigger: '.dances__card-1',
                 start: 'top bottom',
                 end: 'top 40%',
-                scrub: 1
+                scrub: scrubVal
             }
         });
 
@@ -61,12 +64,12 @@ function initDances() {
         },
         {
             x: '-6vw',
-            ease: 'power2.out',
+            ease: 'none',
             scrollTrigger: {
                 trigger: '.dances__card-2',
                 start: 'top bottom',
                 end: 'top 40%',
-                scrub: 1
+                scrub: scrubVal
             }
         });
 }

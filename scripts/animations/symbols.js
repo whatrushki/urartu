@@ -2,6 +2,9 @@ function initSymbols() {
     const element = document.querySelector("#symbols");
     if (!element) return;
 
+    const isMobile = window.matchMedia('(max-width: 768px), (pointer: coarse)').matches;
+    const scrubVal = isMobile ? true : 1;
+
     gsap.fromTo('.symbols__main-image',
         {
             scale: 0.8,
@@ -12,12 +15,12 @@ function initSymbols() {
             scale: 1,
             y: 0,
             x: '2vw',
-            ease: 'power2.out',
+            ease: 'none',
             scrollTrigger: {
                 trigger: '.symbols__title',
                 start: 'bottom bottom',
                 end: 'bottom 50%',
-                scrub: 1
+                scrub: scrubVal
             }
         }
     );
@@ -36,7 +39,7 @@ function initSymbols() {
                     trigger: carpet,
                     start: "top bottom",
                     end: "bottom top",
-                    scrub: 1
+                    scrub: scrubVal
                 }
             });
 
@@ -49,12 +52,12 @@ function initSymbols() {
             },
             {
                 scale: 1,
-                ease: "power2.out",
+                ease: "none",
                 scrollTrigger: {
                     trigger: el,
                     start: "top bottom",
                     end: "bottom 80%",
-                    scrub: 1
+                    scrub: scrubVal
                 }
             });
     });

@@ -9,7 +9,7 @@ ScrollTrigger.config({
 });
 
 // ==========================================
-// 2️⃣ ИНИЦИАЛИЗАЦИЯ LENIS
+// 2️⃣ ИНИЦИАЛИЗАЦИЯ LENIS И СИНХРОНИЗАЦИИ
 // ==========================================
 
 // Проверяем: мобилка или ПК
@@ -17,12 +17,18 @@ const isMobile = window.matchMedia(
   '(max-width: 768px), (pointer: coarse)'
 ).matches;
 
+window.getAppScrub = (pcVal = 1) => (isMobile ? true : pcVal);
+
+// Блокируем скролл на старте до окончания прелоадера
+document.documentElement.style.overflow = 'hidden';
+document.body.style.overflow = 'hidden';
+
 // Инициализируем Lenis ТОЛЬКО если это компьютер
 let lenis = null;
 
 if (!isMobile) {
   lenis = new Lenis({
-    duration: 1.4,
+    duration: 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     smoothWheel: true,
   });
@@ -34,12 +40,13 @@ if (!isMobile) {
   gsap.ticker.add((time) => {
     lenis?.raf(time * 1000);
   });
-  gsap.ticker.lagSmoothing(500, 33);
+  // КРИТИЧНО для плавности с Lenis: lagSmoothing(0) убирает рывки тикера GSAP
+  gsap.ticker.lagSmoothing(0);
 
-  // Блокируем скролл на старте
   lenis.stop();
-  document.documentElement.style.overflow = 'hidden';
-  document.body.style.overflow = 'hidden';
+} else {
+  // На мобилках синхронизируем нативный тач-скролл с циклом рендера GSAP
+  ScrollTrigger.normalizeScroll({ allowNestedScroll: true });
 }
 
 // ==========================================

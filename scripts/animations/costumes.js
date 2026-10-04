@@ -13,6 +13,9 @@ function initCostumes() {
 
     gsap.set(track, { x: 0 });
 
+    const isMobile = window.matchMedia('(max-width: 768px), (pointer: coarse)').matches;
+    const scrubVal = isMobile ? true : 1;
+
     const slides = [...track.querySelectorAll(".costume")];
     const getDistance = () =>
         Math.max(0, (slides.length - 1) * wrapper.clientWidth);
@@ -23,7 +26,8 @@ function initCostumes() {
             pin: true,
             start: window.innerWidth < 630 ? "top" : "top -10%",
             end: () => `+=${getDistance()}`,
-            scrub: 1,
+            scrub: scrubVal,
+            anticipatePin: 1,
             invalidateOnRefresh: true
         }
     });
@@ -39,12 +43,12 @@ function initCostumes() {
         },
         {
             y: 0,
-            ease: 'power2.out',
+            ease: 'none',
             scrollTrigger: {
                 trigger: '.costumes__list',
                 start: 'top bottom',
                 end: 'top 60%',
-                scrub: 1
+                scrub: scrubVal
             }
         });
 }

@@ -2,25 +2,28 @@ function initHistory() {
     const element = document.querySelector("#history");
     if (!element) return;
 
+    const isMobile = window.matchMedia('(max-width: 768px), (pointer: coarse)').matches;
+    const scrubVal = isMobile ? true : 1;
+
     gsap.to('.history__decoration--ishhanac-1', {
         x: '-28vw',
-        ease: 'power1.out',
+        ease: 'none',
         scrollTrigger: {
             trigger: '.history__date-block',
             start: 'top bottom',
             end: 'top 50%',
-            scrub: 1
+            scrub: scrubVal
         }
     });
 
     gsap.to('.history__decoration--ishhanac-2', {
         x: '28vw',
-        ease: 'power1.out',
+        ease: 'none',
         scrollTrigger: {
             trigger: '.history__date-block',
             start: 'top bottom',
             end: 'top 50%',
-            scrub: 1
+            scrub: scrubVal
         }
     });
 
@@ -30,12 +33,12 @@ function initHistory() {
         },
         {
             x: 0,
-            ease: 'power2.out',
+            ease: 'none',
             scrollTrigger: {
                 trigger: '.history__title--second',
                 start: 'top bottom',
                 end: 'bottom 40%',
-                scrub: 1
+                scrub: scrubVal
             }
         });
 
@@ -47,12 +50,12 @@ function initHistory() {
         {
             y: ' -5vw',
             x: '-2vw',
-            ease: 'power2.out',
+            ease: 'none',
             scrollTrigger: {
                 trigger: '.history__text--secondary',
                 start: 'bottom bottom',
                 end: 'bottom 70%',
-                scrub: 1
+                scrub: scrubVal
             }
         });
 }

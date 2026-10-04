@@ -107,7 +107,7 @@ function initEnsemble() {
                 y: 0,
                 x: 0,
                 rotation: 0,
-                ease: "power2.out",
+                ease: "none",
                 duration: 1
             }
         );
@@ -142,7 +142,7 @@ function initEnsemble() {
             y: "15vw",
             x: '70vw',
             rotation: 30,
-            ease: "power2.in",
+            ease: "none",
             duration: 1
         });
     }
