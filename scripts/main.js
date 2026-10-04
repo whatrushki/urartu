@@ -248,9 +248,7 @@ function startApplication() {
   runSafe(initDecorations);
   runSafe(initContacts);
 
-  if (window.innerWidth > 768) {
-    runSafe(initTextAnimations);
-  }
+  runSafe(initTextAnimations);
 
   // Гарантированная калибровка ScrollTrigger и Lenis
   const refreshAll = () => {

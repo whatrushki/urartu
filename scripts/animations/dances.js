@@ -12,12 +12,12 @@ function initDances() {
             y: 0,
             x: '-0.5vw',
             scale: 1,
-            ease: 'none',
+            ease: 'power2.out',
             scrollTrigger: {
                 trigger: '.dances__curtain--left',
                 start: 'top bottom',
                 end: 'top 40%',
-                scrub: true
+                scrub: 1
             }
         });
 
@@ -31,12 +31,12 @@ function initDances() {
             y: 0,
             x: '0.5vw',
             scale: 1,
-            ease: 'none',
+            ease: 'power2.out',
             scrollTrigger: {
                 trigger: '.dances__curtain--right',
                 start: 'top bottom',
                 end: 'top 40%',
-                scrub: true
+                scrub: 1
             }
         });
 
@@ -46,12 +46,12 @@ function initDances() {
         },
         {
             x: 0,
-            ease: 'none',
+            ease: 'power2.out',
             scrollTrigger: {
                 trigger: '.dances__card-1',
                 start: 'top bottom',
                 end: 'top 40%',
-                scrub: true
+                scrub: 1
             }
         });
 
@@ -61,12 +61,12 @@ function initDances() {
         },
         {
             x: '-6vw',
-            ease: 'none',
+            ease: 'power2.out',
             scrollTrigger: {
                 trigger: '.dances__card-2',
                 start: 'top bottom',
                 end: 'top 40%',
-                scrub: true
+                scrub: 1
             }
         });
 }

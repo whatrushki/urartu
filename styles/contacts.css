@@ -252,3 +252,253 @@
         }
     }
 }
+
+/* =========================================================
+   CONTACT MODAL DIALOG
+   ========================================================= */
+
+.contact-dialog {
+    border: none;
+    border-radius: 24px;
+    padding: 0;
+    background: transparent;
+    color: var(--color-fg-white-common, #413F3F);
+    max-width: 440px;
+    width: calc(100% - 32px);
+    margin: auto;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    outline: none;
+    opacity: 0;
+    transform: scale(0.92) translateY(12px);
+    transition: opacity 0.25s ease, transform 0.25s ease, display 0.25s allow-discrete, overlay 0.25s allow-discrete;
+}
+
+.contact-dialog[open] {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+@starting-style {
+    .contact-dialog[open] {
+        opacity: 0;
+        transform: scale(0.92) translateY(12px);
+    }
+}
+
+.contact-dialog::backdrop {
+    background-color: rgba(18, 22, 28, 0);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    transition: background-color 0.25s ease, backdrop-filter 0.25s ease, display 0.25s allow-discrete, overlay 0.25s allow-discrete;
+}
+
+.contact-dialog[open]::backdrop {
+    background-color: rgba(18, 22, 28, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+@starting-style {
+    .contact-dialog[open]::backdrop {
+        background-color: rgba(18, 22, 28, 0);
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
+    }
+}
+
+.contact-dialog__container {
+    position: relative;
+    background: var(--color-bg-white, #FFF7E8);
+    border: 2px solid var(--color-fg-white-accent, #9B632B);
+    border-radius: 24px;
+    padding: 34px 28px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.contact-dialog__close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid rgba(155, 99, 43, 0.25);
+    background: transparent;
+    color: var(--color-fg-white-common, #413F3F);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.contact-dialog__close:hover {
+    background: var(--color-bg-cherry, #983B58);
+    color: #FFF7F0;
+    border-color: var(--color-bg-cherry, #983B58);
+    transform: rotate(90deg);
+}
+
+.contact-dialog__header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+    align-items: center;
+}
+
+.contact-dialog__subtitle {
+    font-family: var(--font-quote, 'BadScript');
+    color: var(--color-fg-white-accent, #9B632B);
+    font-size: 1.25rem;
+    line-height: 1.2;
+}
+
+.contact-dialog__title {
+    font-family: var(--font-heading, 'Playfair');
+    font-size: 1.9rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--color-fg-white-common, #413F3F);
+    line-height: 1.1;
+    margin: 2px 0 0;
+}
+
+.contact-dialog__desc {
+    font-family: var(--font-body, 'Inter');
+    font-size: 0.9rem;
+    color: #6E5F53;
+    margin: 4px 0 0;
+    line-height: 1.3;
+}
+
+/* Phone Card */
+.contact-dialog__phone-box {
+    background: #FAF3E7;
+    border: 1px dashed rgba(155, 99, 43, 0.4);
+    border-radius: 16px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-dialog__phone-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-dialog__phone-label {
+    font-family: var(--font-nav, 'JetBrainsMono');
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #8F7661;
+}
+
+.contact-dialog__phone-val {
+    font-family: var(--font-heading, 'Playfair');
+    font-size: 1.65rem;
+    font-weight: 600;
+    color: var(--color-bg-cherry, #983B58);
+    letter-spacing: 0.02em;
+    user-select: all;
+    line-height: 1.2;
+}
+
+.contact-dialog__copy-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 16px;
+    border-radius: 12px;
+    border: 1.5px solid var(--color-fg-white-accent, #9B632B);
+    background: transparent;
+    color: var(--color-fg-white-accent, #9B632B);
+    font-family: var(--font-body, 'Inter');
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.contact-dialog__copy-btn:hover {
+    background: var(--color-fg-white-accent, #9B632B);
+    color: #FFF7F0;
+    box-shadow: 0 4px 12px rgba(155, 99, 43, 0.2);
+}
+
+.contact-dialog__copy-btn.copied {
+    background: #4A7A57;
+    border-color: #4A7A57;
+    color: #FFFFFF;
+}
+
+/* Actions list */
+.contact-dialog__links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-dialog__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-family: var(--font-body, 'Inter');
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.25s ease;
+    box-sizing: border-box;
+}
+
+.contact-dialog__link svg,
+.contact-dialog__link img {
+    flex-shrink: 0;
+}
+
+.contact-dialog__link--wa {
+    background: #25D366;
+    color: #FFFFFF;
+}
+
+.contact-dialog__link--wa:hover {
+    background: #1EBE5D;
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35);
+    transform: translateY(-1px);
+}
+
+.contact-dialog__link--tg {
+    background: #24A1DE;
+    color: #FFFFFF;
+}
+
+.contact-dialog__link--tg:hover {
+    background: #1F93CC;
+    box-shadow: 0 6px 16px rgba(36, 161, 222, 0.35);
+    transform: translateY(-1px);
+}
+
+.contact-dialog__link--tel {
+    background: rgba(155, 99, 43, 0.1);
+    color: var(--color-fg-white-accent, #9B632B);
+    border: 1px solid rgba(155, 99, 43, 0.3);
+}
+
+.contact-dialog__link--tel:hover {
+    background: var(--color-fg-white-accent, #9B632B);
+    color: #FFF7F0;
+    transform: translateY(-1px);
+}

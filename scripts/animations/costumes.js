@@ -23,7 +23,7 @@ function initCostumes() {
             pin: true,
             start: window.innerWidth < 630 ? "top" : "top -10%",
             end: () => `+=${getDistance()}`,
-            scrub: true,
+            scrub: 1,
             invalidateOnRefresh: true
         }
     });
@@ -39,12 +39,12 @@ function initCostumes() {
         },
         {
             y: 0,
-            ease: 'none',
+            ease: 'power2.out',
             scrollTrigger: {
                 trigger: '.costumes__list',
                 start: 'top bottom',
                 end: 'top 60%',
-                scrub: true
+                scrub: 1
             }
         });
 }

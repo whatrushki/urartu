@@ -12,12 +12,12 @@ function initSymbols() {
             scale: 1,
             y: 0,
             x: '2vw',
-            ease: 'none',
+            ease: 'power2.out',
             scrollTrigger: {
                 trigger: '.symbols__title',
                 start: 'bottom bottom',
                 end: 'bottom 50%',
-                scrub: true
+                scrub: 1
             }
         }
     );
@@ -36,7 +36,7 @@ function initSymbols() {
                     trigger: carpet,
                     start: "top bottom",
                     end: "bottom top",
-                    scrub: true
+                    scrub: 1
                 }
             });
 
@@ -49,12 +49,12 @@ function initSymbols() {
             },
             {
                 scale: 1,
-                ease: "none",
+                ease: "power2.out",
                 scrollTrigger: {
                     trigger: el,
                     start: "top bottom",
                     end: "bottom 80%",
-                    scrub: true
+                    scrub: 1
                 }
             });
     });

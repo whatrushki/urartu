@@ -4,23 +4,23 @@ function initHistory() {
 
     gsap.to('.history__decoration--ishhanac-1', {
         x: '-28vw',
-        ease: 'none',
+        ease: 'power1.out',
         scrollTrigger: {
             trigger: '.history__date-block',
             start: 'top bottom',
             end: 'top 50%',
-            scrub: true
+            scrub: 1
         }
     });
 
     gsap.to('.history__decoration--ishhanac-2', {
         x: '28vw',
-        ease: 'none',
+        ease: 'power1.out',
         scrollTrigger: {
             trigger: '.history__date-block',
             start: 'top bottom',
             end: 'top 50%',
-            scrub: true
+            scrub: 1
         }
     });
 
@@ -30,12 +30,12 @@ function initHistory() {
         },
         {
             x: 0,
-            ease: 'none',
+            ease: 'power2.out',
             scrollTrigger: {
                 trigger: '.history__title--second',
                 start: 'top bottom',
                 end: 'bottom 40%',
-                scrub: true
+                scrub: 1
             }
         });
 
@@ -47,12 +47,12 @@ function initHistory() {
         {
             y: ' -5vw',
             x: '-2vw',
-            ease: 'none',
+            ease: 'power2.out',
             scrollTrigger: {
                 trigger: '.history__text--secondary',
                 start: 'bottom bottom',
                 end: 'bottom 70%',
-                scrub: true
+                scrub: 1
             }
         });
 }

@@ -8,12 +8,12 @@ function initDevelopers() {
         },
         {
             x: 0,
-            ease: 'none',
+            ease: 'power2.out',
             scrollTrigger: {
                 trigger: '.developers__content',
                 start: 'top bottom',
                 end: 'top 50%',
-                scrub: true
+                scrub: 1
             }
         });
 
@@ -23,12 +23,12 @@ function initDevelopers() {
         },
         {
             x: 0,
-            ease: 'none',
+            ease: 'power2.out',
             scrollTrigger: {
                 trigger: '.developers__content',
                 start: 'top bottom',
                 end: 'top 50%',
-                scrub: true
+                scrub: 1
             }
         });
 
@@ -38,12 +38,12 @@ function initDevelopers() {
         },
         {
             y: 0,
-            ease: 'none',
+            ease: 'power2.out',
             scrollTrigger: {
                 trigger: '.developers__content',
                 start: 'top bottom',
                 end: 'top 60%',
-                scrub: true
+                scrub: 1
             }
         });
 }

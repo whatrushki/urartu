@@ -36,4 +36,83 @@ function initContacts() {
         onEnterBack: () => tweens.forEach(t => t.resume()),
         onLeaveBack: () => tweens.forEach(t => t.pause())
     });
+
+    initContactModal();
+}
+
+function initContactModal() {
+    const ctaButton = document.querySelector(".footer__cta-button");
+    const dialog = document.getElementById("contact-dialog");
+    const closeBtn = document.getElementById("contactDialogClose");
+    const copyBtn = document.getElementById("contactCopyBtn");
+
+    if (!dialog || !ctaButton) return;
+
+    ctaButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        dialog.showModal();
+    });
+
+    if (closeBtn) {
+        closeBtn.addEventListener("click", () => {
+            dialog.close();
+        });
+    }
+
+    // Fallback для закрытия кликом по бекдропу (для браузеров без closedby)
+    if (!('closedBy' in HTMLDialogElement.prototype)) {
+        dialog.addEventListener("click", (event) => {
+            if (event.target !== dialog) return;
+            const rect = dialog.getBoundingClientRect();
+            const isInDialog = (
+                rect.top <= event.clientY &&
+                event.clientY <= rect.bottom &&
+                rect.left <= event.clientX &&
+                event.clientX <= rect.right
+            );
+            if (!isInDialog) {
+                dialog.close();
+            }
+        });
+    }
+
+    if (copyBtn) {
+        const copyTextEl = copyBtn.querySelector(".contact-dialog__copy-text");
+        const rawPhone = "+79882571929";
+
+        copyBtn.addEventListener("click", async () => {
+            let copied = false;
+            try {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    await navigator.clipboard.writeText(rawPhone);
+                    copied = true;
+                }
+            } catch (err) {
+                // Clipboard API может блокироваться без явного фокуса, пробуем fallback
+            }
+
+            if (!copied) {
+                try {
+                    const temp = document.createElement("input");
+                    temp.value = rawPhone;
+                    document.body.appendChild(temp);
+                    temp.select();
+                    copied = document.execCommand("copy");
+                    document.body.removeChild(temp);
+                } catch (e) {
+                    console.warn("Fallback copy failed:", e);
+                }
+            }
+
+            if (copied) {
+                copyBtn.classList.add("copied");
+                if (copyTextEl) copyTextEl.textContent = "Скопировано! ✓";
+
+                setTimeout(() => {
+                    copyBtn.classList.remove("copied");
+                    if (copyTextEl) copyTextEl.textContent = "Скопировать";
+                }, 2000);
+            }
+        });
+    }
 }

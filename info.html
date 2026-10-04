@@ -287,6 +287,38 @@
         </div>
     </section>
 
+    <!-- ===== ДИАЛОГОВОЕ ОКНО КОНТАКТОВ ===== -->
+    <dialog id="contact-dialog" class="contact-dialog" closedby="any" aria-labelledby="contactDialogTitle">
+        <div class="contact-dialog__container">
+            <button type="button" class="contact-dialog__close" id="contactDialogClose" aria-label="Закрыть окно">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+            <div class="contact-dialog__header">
+                <span class="contact-dialog__subtitle">Ансамбль «Урарту»</span>
+                <h3 id="contactDialogTitle" class="contact-dialog__title">Связаться с нами</h3>
+                <p class="contact-dialog__desc">Запись в группы и ответы на любые вопросы</p>
+            </div>
+
+            <div class="contact-dialog__phone-box">
+                <div class="contact-dialog__phone-info">
+                    <span class="contact-dialog__phone-label">Номер телефона</span>
+                    <span class="contact-dialog__phone-val">+7 (988) 257-19-29</span>
+                </div>
+                <button type="button" class="contact-dialog__copy-btn" id="contactCopyBtn" title="Скопировать номер телефона">
+                    <svg class="contact-dialog__copy-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span class="contact-dialog__copy-text">Скопировать</span>
+                </button>
+            </div>
+        </div>
+    </dialog>
+
     <!-- Lenis smooth scroll -->
     <script src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js"></script>
     <!-- GSAP -->
@@ -305,7 +337,7 @@
     <script src="./scripts/animations/decorations.js"></script>
     <script src="./scripts/animations/text.js"></script>
     <script src="./scripts/animations/contacts.js"></script>
-    <script src="./scripts/main.js"></script>
+    <script src="./scripts/main.js?v=3"></script>
 </body>
 
 </html>
