@@ -22,27 +22,11 @@
     height: auto;
 }
 
-.hero__header {
+.hero__header-spacer {
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 4vw;
-}
-
-.hero__link {
-    font-family: var(--font-nav);
-    font-size: 2vw;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: -6%;
-    color: var(--color-fg-white-accent);
-}
-
-.hero__logo-image {
-    width: 64px;
-    height: auto;
+    min-height: clamp(48px, 4.5vw, 64px);
+    pointer-events: none;
+    visibility: hidden;
 }
 
 .hero__title_wrapper {
@@ -105,14 +89,6 @@
 @media (max-width: 650px) {
     .hero__decoration {
         display: none;
-    }
-
-    .hero__link {
-        display: none;
-    }
-
-    .hero__header {
-        justify-content: center;
     }
 
     .hero__title {

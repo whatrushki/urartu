@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="styles/director.css">
     <link rel="stylesheet" href="styles/ensemble.css">
     <link rel="stylesheet" href="styles/developers.css">
+    <link rel="stylesheet" href="styles/header.css?v=4">
 
     <!-- Микроразметка Schema.org (JSON-LD) -->
     <script type="application/ld+json">
@@ -195,20 +196,61 @@
     <!-- Grain Overlay -->
     <div class="grain-overlay"></div>
 
+    <!-- Фиксированная шапка сайта (Glassmorphism) -->
+    <header class="site-header" id="site-header">
+        <div class="site-header__container">
+            <nav class="site-header__nav site-header__nav--left" aria-label="Разделы ансамбля">
+                <a class="site-header__link" href="#history">История</a>
+                <a class="site-header__link" href="#symbols">Символы</a>
+                <a class="site-header__link" href="#dances">Танец</a>
+            </nav>
+            <a class="site-header__logo-link" href="#" aria-label="Ансамбль Урарту - наверх">
+                <img class="site-header__logo-image" src="./assets/images/logo-mono.svg" alt="Логотип ансамбля Урарту">
+            </a>
+            <nav class="site-header__nav site-header__nav--right" aria-label="О нас и контакты">
+                <a class="site-header__link" href="#costumes">Костюмы</a>
+                <a class="site-header__link" href="#director">Руководитель</a>
+                <a class="site-header__link" href="#ensemble">Ансамбль</a>
+            </nav>
+            <!-- Бургер-кнопка для мобилок -->
+            <button class="site-header__burger" id="burger-toggle" type="button" aria-label="Открыть меню навигации" aria-expanded="false" aria-controls="mobile-menu">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Полноэкранное меню для мобильных телефонов -->
+    <nav class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <!-- Кнопка закрытия меню с крестиком -->
+        <button class="mobile-menu__close" id="mobile-menu-close" type="button" aria-label="Закрыть меню">
+            <span class="close-line close-line--1"></span>
+            <span class="close-line close-line--2"></span>
+        </button>
+
+        <div class="mobile-menu__nav">
+            <a class="mobile-menu__link" href="#history">История</a>
+            <a class="mobile-menu__link" href="#symbols">Символы</a>
+            <a class="mobile-menu__link" href="#dances">Танец</a>
+            <a class="mobile-menu__link" href="#costumes">Костюмы</a>
+            <a class="mobile-menu__link" href="#director">Руководитель</a>
+            <a class="mobile-menu__link" href="#ensemble">Ансамбль</a>
+            <a class="mobile-menu__link" href="#developers">Разработчики</a>
+        </div>
+        <div class="mobile-menu__footer">
+            <a class="mobile-menu__filials-btn" href="info.html">
+                <span>Филиалы и запись</span>
+                <span aria-hidden="true">→</span>
+            </a>
+            <p class="mobile-menu__slogan">Там, где начинается танец...</p>
+        </div>
+    </nav>
+
     <main class="app-container">
         <section id="hero">
             <div class="hero__wrapper">
-                <header class="hero__header">
-                    <a class="hero__link" href="#history">История</a>
-                    <a class="hero__link" href="#symbols">Символы</a>
-                    <a class="hero__link" href="#dances">Танец</a>
-                    <a class="hero__logo-link" href="/">
-                        <img class="hero__logo-image" src="./assets/images/logo-mono.svg" alt="Логотип ансамбля">
-                    </a>
-                    <a class="hero__link" href="#costumes">Костюмы</a>
-                    <a class="hero__link" href="#director">Руководитель</a>
-                    <a class="hero__link" href="#ensemble">Ансамбль</a>
-                </header>
+                <div class="hero__header-spacer" aria-hidden="true"></div>
 
                 <!-- В секции #hero: -->
                 <div class="hero__title_wrapper">
@@ -945,7 +987,7 @@
                             src="./assets/images/github.svg" alt="Гитхаб"></a>
                     <div class="rights__text">
                         <p>All rights reserved</p>
-                        <p>Copyright (c) 2026 WHAT Technologies</p>
+                        <p>Copyright (c) 2026 Urartu</p>
                     </div>
                 </div>
                 <div class="developers__icons">
@@ -979,7 +1021,8 @@
     <script src="./scripts/animations/decorations.js"></script>
     <script src="./scripts/animations/text.js"></script>
     <script src="./scripts/animations/contacts.js"></script>
-    <script src="./scripts/main.js?v=4"></script>
+    <script src="./scripts/animations/header.js?v=3"></script>
+    <script src="./scripts/main.js?v=5"></script>
 </body>
 
 </html>

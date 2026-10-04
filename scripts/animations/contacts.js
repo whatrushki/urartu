@@ -38,6 +38,7 @@ function initContacts() {
     });
 
     initContactModal();
+    initBackToHomeButton();
 }
 
 function initContactModal() {
@@ -115,4 +116,25 @@ function initContactModal() {
             }
         });
     }
+}
+
+function initBackToHomeButton() {
+    const btn = document.querySelector(".back-to-home");
+    const contactsSec = document.querySelector("#contacts");
+    if (!btn || !contactsSec) return;
+
+    const updateBtnTheme = () => {
+        const rect = contactsSec.getBoundingClientRect();
+        if (rect.top <= 60) {
+            btn.classList.add("back-to-home--dark");
+        } else {
+            btn.classList.remove("back-to-home--dark");
+        }
+    };
+
+    window.addEventListener("scroll", updateBtnTheme, { passive: true });
+    if (window.lenis) {
+        window.lenis.on("scroll", updateBtnTheme);
+    }
+    updateBtnTheme();
 }

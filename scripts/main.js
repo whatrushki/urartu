@@ -44,9 +44,6 @@ if (!isMobile) {
   gsap.ticker.lagSmoothing(0);
 
   lenis.stop();
-} else {
-  // На мобилках синхронизируем нативный тач-скролл с циклом рендера GSAP
-  ScrollTrigger.normalizeScroll({ allowNestedScroll: true });
 }
 
 // ==========================================
@@ -254,6 +251,7 @@ function startApplication() {
   runSafe(initDevelopers);
   runSafe(initDecorations);
   runSafe(initContacts);
+  runSafe(initSiteHeader);
 
   runSafe(initTextAnimations);
 

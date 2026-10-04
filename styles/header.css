@@ -1,0 +1,394 @@
+/* =========================================================
+   ФИКСИРОВАННАЯ ШАПКА И НАВИГАЦИЯ (GLASSMORPHISM)
+========================================================= */
+
+.site-header {
+    position: fixed;
+    top: 1.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 3rem);
+    max-width: 1800px;
+    z-index: 1000;
+    padding: 0.4vw 3vw;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 1000px;
+    box-shadow: 0 0 0 transparent;
+    opacity: 1;
+    transition: 
+        background 0.35s ease,
+        backdrop-filter 0.35s ease,
+        -webkit-backdrop-filter 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease,
+        transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.3s ease;
+    will-change: background, box-shadow, transform, opacity;
+}
+
+.site-header--hidden {
+    transform: translate(-50%, -160%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.site-header__container {
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.site-header__nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5.5vw;
+}
+
+.site-header__link {
+    font-family: var(--font-nav);
+    font-size: clamp(14px, 1.8vw, 22px);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    color: var(--color-fg-white-accent);
+    position: relative;
+    padding: 0.25rem 0;
+    transition: color 0.3s ease, opacity 0.25s ease, transform 0.2s ease;
+}
+
+.site-header__link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.site-header__link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.site-header__link:hover {
+    opacity: 0.85;
+}
+
+.site-header__logo-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.site-header__logo-link:hover {
+    transform: scale(1.06);
+}
+
+.site-header__logo-image {
+    width: clamp(48px, 4.2vw, 64px);
+    height: auto;
+    display: block;
+    transition: filter 0.35s ease, transform 0.3s ease;
+}
+
+/* =========================================================
+   ПЛАВАЮЩИЙ ОСТРОВНОЙ ХЕДЕР СО СКРУГЛЕНИЕМ (FLOATING ISLAND)
+========================================================= */
+
+.site-header--scrolled {
+    background: rgba(255, 247, 232, 0.78);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid rgba(155, 99, 43, 0.2);
+    box-shadow: 0 10px 32px rgba(65, 63, 63, 0.1), 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* =========================================================
+   ТЁМНАЯ ТЕМА ШАПКИ (ДЛЯ СЕКЦИЙ С ТЁМНЫМ ФОНОМ)
+========================================================= */
+
+.site-header--dark-theme .site-header__link {
+    color: #FFF7E8;
+}
+
+.site-header--dark-theme .site-header__link:hover {
+    color: #FFE8E8;
+}
+
+.site-header--dark-theme .site-header__logo-image {
+    filter: brightness(0) invert(0.95);
+}
+
+.site-header--scrolled.site-header--dark-theme {
+    background: rgba(24, 18, 15, 0.74);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 247, 232, 0.18);
+    box-shadow: 0 14px 42px rgba(0, 0, 0, 0.42), 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================================
+   КНОПКА БУРГЕР-МЕНЮ (ДЛЯ МОБИЛОК)
+========================================================= */
+
+.site-header__burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1002;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.site-header__burger .burger-line {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background-color: var(--color-fg-white-accent);
+    border-radius: 2px;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                opacity 0.25s ease, 
+                background-color 0.35s ease;
+    transform-origin: center;
+}
+
+.site-header--dark-theme .site-header__burger .burger-line {
+    background-color: #FFF7E8;
+}
+
+/* Анимация бургера в крестик */
+.site-header__burger.is-active .burger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    background-color: #FFF7E8 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.site-header__burger.is-active .burger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.site-header__burger.is-active .burger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    background-color: #FFF7E8 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Логотип становится светлым при открытом меню */
+.site-header.menu-is-open .site-header__logo-image {
+    filter: brightness(0) invert(0.95) !important;
+}
+
+/* Распорка в Hero чтобы контент не прыгал */
+.hero__header-spacer {
+    width: 100%;
+    height: clamp(48px, 4.2vw, 64px);
+    pointer-events: none;
+    visibility: hidden;
+}
+
+/* =========================================================
+   ПОЛНОЭКРАННОЕ МОБИЛЬНОЕ МЕНЮ (OVERLAY)
+========================================================= */
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    z-index: 1004;
+    background: rgba(20, 14, 11, 0.95);
+    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 6rem 8vw 3rem;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-12px);
+    transition: 
+        opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+        visibility 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.mobile-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.mobile-menu__close {
+    position: absolute;
+    top: 1.1rem;
+    right: 5vw;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-menu__close .close-line {
+    position: absolute;
+    width: 26px;
+    height: 2.5px;
+    background-color: #FFF7E8;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    transition: transform 0.25s ease, background-color 0.2s ease;
+}
+
+.mobile-menu__close .close-line--1 {
+    transform: rotate(45deg);
+}
+
+.mobile-menu__close .close-line--2 {
+    transform: rotate(-45deg);
+}
+
+.mobile-menu__close:hover .close-line,
+.mobile-menu__close:active .close-line {
+    background-color: var(--color-fg-tuff-accent);
+    transform: scale(1.08) rotate(45deg);
+}
+
+.mobile-menu__close:hover .close-line--2,
+.mobile-menu__close:active .close-line--2 {
+    transform: scale(1.08) rotate(-45deg);
+}
+
+.mobile-menu__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.mobile-menu__link {
+    font-family: var(--font-nav);
+    font-size: clamp(1.4rem, 6vw, 2.2rem);
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    color: #FFF7E8;
+    position: relative;
+    padding: 0.3rem 0;
+    transition: color 0.25s ease, transform 0.25s ease, opacity 0.25s ease;
+    opacity: 0.9;
+}
+
+.mobile-menu__link:hover,
+.mobile-menu__link:active {
+    color: var(--color-fg-tuff-accent);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.mobile-menu__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 247, 232, 0.12);
+}
+
+.mobile-menu__filials-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.8rem;
+    font-family: var(--font-nav);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #FFF7E8;
+    background: rgba(155, 99, 43, 0.35);
+    border: 1px solid rgba(225, 215, 180, 0.4);
+    border-radius: 999px;
+    text-decoration: none;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.mobile-menu__filials-btn:hover,
+.mobile-menu__filials-btn:active {
+    background: rgba(155, 99, 43, 0.7);
+    transform: scale(1.03);
+}
+
+.mobile-menu__slogan {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: rgba(255, 247, 232, 0.5);
+    text-align: center;
+}
+
+/* =========================================================
+   АДАПТИВ ДЛЯ ПЛАНШЕТОВ И МОБИЛОК
+========================================================= */
+
+@media (max-width: 860px) {
+    .site-header__nav {
+        display: none;
+    }
+
+    .site-header__container {
+        position: relative;
+        justify-content: center;
+    }
+
+    .site-header__burger {
+        display: flex;
+        position: absolute;
+        right: 0;
+    }
+
+    .site-header {
+        top: 0.8rem;
+        width: calc(100% - 1.5rem);
+        padding: 0.6vw 1.2rem;
+        border-radius: 18px;
+    }
+
+    .site-header--scrolled {
+        padding: 0.6vw 1.2rem;
+    }
+
+    .site-header__logo-image {
+        width: 48px;
+    }
+}
