@@ -382,10 +382,27 @@
         width: calc(100% - 1.5rem);
         padding: 0.6vw 1.2rem;
         border-radius: 18px;
+        transition: 
+            background 0.25s ease,
+            border-color 0.25s ease,
+            box-shadow 0.25s ease,
+            transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+            opacity 0.25s ease;
     }
 
     .site-header--scrolled {
         padding: 0.6vw 1.2rem;
+        background: rgba(255, 247, 232, 0.90);
+        backdrop-filter: blur(8px) saturate(140%);
+        -webkit-backdrop-filter: blur(8px) saturate(140%);
+        box-shadow: 0 4px 16px rgba(65, 63, 63, 0.08);
+    }
+
+    .site-header--scrolled.site-header--dark-theme {
+        background: rgba(24, 18, 15, 0.88);
+        backdrop-filter: blur(8px) saturate(140%);
+        -webkit-backdrop-filter: blur(8px) saturate(140%);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
     }
 
     .site-header__logo-image {

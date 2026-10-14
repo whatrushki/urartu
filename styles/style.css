@@ -245,6 +245,7 @@ section {
     }
 
     .grain-overlay {
+        background-image: url("../assets/images/noise-slow.gif");
         opacity: 0.10 !important;
     }
 }

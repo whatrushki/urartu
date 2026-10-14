@@ -28,15 +28,20 @@ function initSiteHeader() {
   const costumesSection = document.querySelector("#costumes");
   const directorSection = document.querySelector("#director");
 
+  let isScrolled = null;
+  let isHidden = null;
+  let isDark = null;
+  let ticking = false;
+
   // 1. Определение активной темы, видимости и состояния скролла
   const updateHeaderState = () => {
     const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
 
     // Стеклянный фон появляется при скролле дальше 30px
-    if (scrollY > 30) {
-      header.classList.add("site-header--scrolled");
-    } else {
-      header.classList.remove("site-header--scrolled");
+    const shouldScroll = scrollY > 30;
+    if (isScrolled !== shouldScroll) {
+      isScrolled = shouldScroll;
+      header.classList.toggle("site-header--scrolled", shouldScroll);
     }
 
     // Скрытие шапки перед блоком костюмов и возвращение на блоке преподавателя
@@ -44,14 +49,14 @@ function initSiteHeader() {
       const costumesRect = costumesSection.getBoundingClientRect();
       const directorRect = directorSection.getBoundingClientRect();
 
-      // "Немного не доходя до блока костюмов" (~220px до верха экрана)
+      // "Немного не доходя до блока костюмов" (~120px до верха экрана)
       // и пока блок преподавателя не приблизился к шапке (directorRect.top > 80)
       const inCostumesZone = costumesRect.top <= 120 && directorRect.top > 80;
+      const shouldHide = inCostumesZone && !isMenuOpen;
 
-      if (inCostumesZone && !isMenuOpen) {
-        header.classList.add("site-header--hidden");
-      } else {
-        header.classList.remove("site-header--hidden");
+      if (isHidden !== shouldHide) {
+        isHidden = shouldHide;
+        header.classList.toggle("site-header--hidden", shouldHide);
       }
     }
 
@@ -69,17 +74,26 @@ function initSiteHeader() {
       }
     }
 
-    if (currentDark) {
-      header.classList.add("site-header--dark-theme");
-    } else {
-      header.classList.remove("site-header--dark-theme");
+    if (isDark !== currentDark) {
+      isDark = currentDark;
+      header.classList.toggle("site-header--dark-theme", currentDark);
     }
   };
 
-  // Слушатель скролла (пассивный для максимальной производительности)
-  window.addEventListener("scroll", updateHeaderState, { passive: true });
+  const onScroll = () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        updateHeaderState();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  };
+
+  // Слушатель скролла с синхронизацией по rAF
+  window.addEventListener("scroll", onScroll, { passive: true });
   if (window.lenis) {
-    window.lenis.on("scroll", updateHeaderState);
+    window.lenis.on("scroll", onScroll);
   }
   updateHeaderState();
 

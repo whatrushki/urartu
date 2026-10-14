@@ -14,7 +14,7 @@ function initCostumes() {
     gsap.set(track, { x: 0 });
 
     const isMobile = window.matchMedia('(max-width: 768px), (pointer: coarse)').matches;
-    const scrubVal = isMobile ? true : 1;
+    const scrubVal = isMobile ? 0.6 : 1;
 
     const slides = [...track.querySelectorAll(".costume")];
     const getDistance = () =>

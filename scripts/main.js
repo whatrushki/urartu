@@ -17,7 +17,7 @@ const isMobile = window.matchMedia(
   '(max-width: 768px), (pointer: coarse)'
 ).matches;
 
-window.getAppScrub = (pcVal = 1) => (isMobile ? true : pcVal);
+window.getAppScrub = (pcVal = 1) => (isMobile ? 0.6 : pcVal);
 
 // Блокируем скролл на старте до окончания прелоадера
 document.documentElement.style.overflow = 'hidden';
