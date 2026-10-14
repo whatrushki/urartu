@@ -17,32 +17,34 @@ const isMobile = window.matchMedia(
   '(max-width: 768px), (pointer: coarse)'
 ).matches;
 
-window.getAppScrub = (val = 0.8) => val;
+window.getAppScrub = (pcVal = 1) => (isMobile ? true : pcVal);
 
 // Блокируем скролл на старте до окончания прелоадера
 document.documentElement.style.overflow = 'hidden';
 document.body.style.overflow = 'hidden';
 
-// Инициализируем Lenis на всех устройствах для бархатного скролла
-const lenis = new Lenis({
-  duration: 1.2,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-  smoothWheel: true,
-  syncTouch: true,
-  touchMultiplier: 1.4,
-});
-window.lenis = lenis;
+// Инициализируем Lenis ТОЛЬКО если это компьютер
+let lenis = null;
 
-lenis.on('scroll', ScrollTrigger.update);
-ScrollTrigger.addEventListener('refresh', () => lenis?.resize());
+if (!isMobile) {
+  lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smoothWheel: true,
+  });
+  window.lenis = lenis;
 
-gsap.ticker.add((time) => {
-  lenis?.raf(time * 1000);
-});
-// КРИТИЧНО для плавности с Lenis: lagSmoothing(0) убирает рывки тикера GSAP
-gsap.ticker.lagSmoothing(0);
+  lenis.on('scroll', ScrollTrigger.update);
+  ScrollTrigger.addEventListener('refresh', () => lenis?.resize());
 
-lenis.stop();
+  gsap.ticker.add((time) => {
+    lenis?.raf(time * 1000);
+  });
+  // КРИТИЧНО для плавности с Lenis: lagSmoothing(0) убирает рывки тикера GSAP
+  gsap.ticker.lagSmoothing(0);
+
+  lenis.stop();
+}
 
 // ==========================================
 // 3️⃣ УМНЫЙ ФИЛЬТР КРИТИЧЕСКИХ ИЗОБРАЖЕНИЙ
@@ -230,7 +232,9 @@ function startApplication() {
   document.documentElement.style.overflow = '';
   document.body.style.overflow = '';
 
-  lenis?.start();
+  if (!isMobile) {
+    lenis?.start();
+  }
 
   const runSafe = (fn) => {
     try { if (typeof fn === 'function') fn(); } catch (e) { console.warn(e); }
