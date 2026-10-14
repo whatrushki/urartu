@@ -2,8 +2,7 @@ function initSymbols() {
     const element = document.querySelector("#symbols");
     if (!element) return;
 
-    const isMobile = window.matchMedia('(max-width: 768px), (pointer: coarse)').matches;
-    const scrubVal = isMobile ? true : 1;
+    const scrubVal = window.getAppScrub ? window.getAppScrub(0.8) : 0.8;
 
     gsap.fromTo('.symbols__main-image',
         {

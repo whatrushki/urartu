@@ -48,17 +48,45 @@
 
 html {
     position: relative;
-    scroll-behavior: initial;
     background-color: var(--color-bg-white);
     -ms-overflow-style: none;
     scrollbar-width: none;
-    overflow-y: overlay;
+}
+
+html.lenis, html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
 }
 
 body {
     position: relative;
     overflow-x: clip;
     width: 100%;
+}
+
+/* Аппаратное ускорение скролл-анимаций (GPU layers) */
+.history__image,
+.history__decoration--ishhanac-1,
+.history__decoration--ishhanac-2,
+.symbols__main-image,
+.symbols__carpet,
+.symbols__element,
+.dances__curtain,
+.dances__card,
+.developers__column,
+.developers__team-image,
+.costumes__track {
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
 }
 
 section {
@@ -244,6 +272,6 @@ section {
     }
 
     .grain-overlay {
-        opacity: 0.10 !important;
+        display: none !important;
     }
 }
