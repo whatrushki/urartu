@@ -712,7 +712,7 @@ function animateContactsText() {
 ========================================================= */
 
 function initTextAnimations() {
-    const isMobile = window.matchMedia('(max-width: 768px), (pointer: coarse)').matches;
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
     // Вступительная анимация Hero (без ScrollTrigger, запускается один раз при старте)
     animateHeroText();

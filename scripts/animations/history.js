@@ -2,7 +2,7 @@ function initHistory() {
     const element = document.querySelector("#history");
     if (!element) return;
 
-    const isMobile = window.matchMedia('(max-width: 768px), (pointer: coarse)').matches;
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
     const scrubVal = isMobile ? 0.6 : 1;
 
     gsap.to('.history__decoration--ishhanac-1', {

@@ -2,7 +2,7 @@ function initDances() {
     const element = document.querySelector("#dances");
     if (!element) return;
 
-    const isMobile = window.matchMedia('(max-width: 768px), (pointer: coarse)').matches;
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
     const scrubVal = isMobile ? 0.6 : 1;
 
     gsap.fromTo('.dances__curtain--left',

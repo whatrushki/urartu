@@ -13,9 +13,8 @@ ScrollTrigger.config({
 // ==========================================
 
 // Проверяем: мобилка или ПК
-const isMobile = window.matchMedia(
-  '(max-width: 768px), (pointer: coarse)'
-).matches;
+const isMobile = window.matchMedia('(max-width: 768px)').matches;
+window.isMobile = isMobile;
 
 window.getAppScrub = (pcVal = 1) => (isMobile ? 0.6 : pcVal);
 
