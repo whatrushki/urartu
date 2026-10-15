@@ -33,7 +33,31 @@ function initSiteHeader() {
   let isDark = null;
   let ticking = false;
 
-  // 1. Определение активной темы, видимости и состояния скролла
+  let sectionData = [];
+  let costumesTop = 0;
+  let directorTop = 0;
+
+  // Измеряем координаты секций один раз, обновляем при resize и ScrollTrigger refresh
+  const measureSections = () => {
+    const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+    sectionData = sections.map((sec) => {
+      const rect = sec.getBoundingClientRect();
+      return {
+        id: sec.id,
+        top: rect.top + scrollY,
+        bottom: rect.bottom + scrollY
+      };
+    });
+
+    if (costumesSection) {
+      costumesTop = costumesSection.getBoundingClientRect().top + scrollY;
+    }
+    if (directorSection) {
+      directorTop = directorSection.getBoundingClientRect().top + scrollY;
+    }
+  };
+
+  // 1. Определение активной темы, видимости и состояния скролла (чистая арифметика, 0 reflow)
   const updateHeaderState = () => {
     const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
 
@@ -45,13 +69,8 @@ function initSiteHeader() {
     }
 
     // Скрытие шапки перед блоком костюмов и возвращение на блоке преподавателя
-    if (costumesSection && directorSection) {
-      const costumesRect = costumesSection.getBoundingClientRect();
-      const directorRect = directorSection.getBoundingClientRect();
-
-      // "Немного не доходя до блока костюмов" (~120px до верха экрана)
-      // и пока блок преподавателя не приблизился к шапке (directorRect.top > 80)
-      const inCostumesZone = costumesRect.top <= 120 && directorRect.top > 80;
+    if (costumesSection && directorSection && costumesTop > 0) {
+      const inCostumesZone = (costumesTop - scrollY <= 120) && (directorTop - scrollY > 80);
       const shouldHide = inCostumesZone && !isMenuOpen;
 
       if (isHidden !== shouldHide) {
@@ -60,14 +79,13 @@ function initSiteHeader() {
       }
     }
 
-    // Определяем секцию под шапкой (на линии 55px от верха)
-    const probeY = 55;
+    // Определяем секцию под шапкой (на линии 55px от верха экрана)
+    const currentY = scrollY + 55;
     let currentDark = false;
 
-    for (let i = 0; i < sections.length; i++) {
-      const rect = sections[i].getBoundingClientRect();
-      if (rect.top <= probeY && rect.bottom > probeY) {
-        if (darkSections.has(sections[i].id)) {
+    for (let i = 0; i < sectionData.length; i++) {
+      if (currentY >= sectionData[i].top && currentY < sectionData[i].bottom) {
+        if (darkSections.has(sectionData[i].id)) {
           currentDark = true;
         }
         break;
@@ -89,6 +107,14 @@ function initSiteHeader() {
       ticking = true;
     }
   };
+
+  // Первоначальный замер и калибровка
+  measureSections();
+  window.addEventListener("resize", measureSections, { passive: true });
+  if (window.ScrollTrigger) {
+    ScrollTrigger.addEventListener("refresh", measureSections);
+  }
+  setTimeout(measureSections, 400);
 
   // Слушатель скролла с синхронизацией по rAF
   window.addEventListener("scroll", onScroll, { passive: true });

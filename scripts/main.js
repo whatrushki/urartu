@@ -39,8 +39,8 @@ if (!isMobile) {
   gsap.ticker.add((time) => {
     lenis?.raf(time * 1000);
   });
-  // КРИТИЧНО для плавности с Lenis: lagSmoothing(0) убирает рывки тикера GSAP
-  gsap.ticker.lagSmoothing(0);
+  // Адаптивное сглаживание тикера GSAP: предотвращает рывки при микро-просадках
+  gsap.ticker.lagSmoothing(500, 33);
 
   lenis.stop();
 }
@@ -59,8 +59,8 @@ function isCriticalImage(img) {
     return false;
   }
 
-  // 3. Игнорируем облака и фон
-  if (img.closest('.contacts__clouds') || img.closest('.director__clouds') || img.classList.contains('symbols__carpet')) {
+  // 3. Игнорируем фоновые облака
+  if (img.closest('.contacts__clouds') || img.closest('.director__clouds')) {
     return false;
   }
 

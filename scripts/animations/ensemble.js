@@ -19,7 +19,8 @@ function initEnsemble() {
                 duration: 4,
                 ease: "sine.inOut",
                 repeat: -1,
-                yoyo: true
+                yoyo: true,
+                paused: true
             })
         );
     }
@@ -31,7 +32,8 @@ function initEnsemble() {
                 duration: 5,
                 ease: "sine.inOut",
                 repeat: -1,
-                yoyo: true
+                yoyo: true,
+                paused: true
             })
         );
     }
@@ -43,7 +45,8 @@ function initEnsemble() {
                 duration: 4,
                 ease: "sine.inOut",
                 repeat: -1,
-                yoyo: true
+                yoyo: true,
+                paused: true
             })
         );
     }
@@ -56,7 +59,8 @@ function initEnsemble() {
                 delay: 1.3,
                 ease: "sine.inOut",
                 repeat: -1,
-                yoyo: true
+                yoyo: true,
+                paused: true
             })
         );
     }
@@ -69,7 +73,8 @@ function initEnsemble() {
                 delay: 2.1,
                 ease: "sine.inOut",
                 repeat: -1,
-                yoyo: true
+                yoyo: true,
+                paused: true
             })
         );
     }

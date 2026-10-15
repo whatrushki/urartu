@@ -13,7 +13,8 @@ function initDecorations() {
                 delay: gsap.utils.random(0, 2),
                 ease: "sine.inOut",
                 repeat: -1,
-                yoyo: true
+                yoyo: true,
+                paused: true
             }
         );
 
