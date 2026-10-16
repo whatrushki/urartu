@@ -1,4 +1,15 @@
 // ==========================================
+// 0️⃣ СБРОС И ОТКЛЮЧЕНИЕ ВОССТАНОВЛЕНИЯ СКРОЛЛА
+// ==========================================
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+window.addEventListener('beforeunload', () => {
+  window.scrollTo(0, 0);
+});
+
+// ==========================================
 // 1️⃣ РЕГИСТРАЦИЯ GSAP И ПЛАГИНОВ
 // ==========================================
 gsap.registerPlugin(ScrollTrigger);
@@ -227,11 +238,13 @@ async function initAppPreloader() {
 }
 
 function startApplication() {
-  // Разблокируем скролл
+  // Разблокируем скролл и принудительно остаёмся в самом верху
   document.documentElement.style.overflow = '';
   document.body.style.overflow = '';
+  window.scrollTo(0, 0);
 
   if (!isMobile) {
+    lenis?.scrollTo(0, { immediate: true });
     lenis?.start();
   }
 
