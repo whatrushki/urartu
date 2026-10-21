@@ -281,8 +281,8 @@ function startApplication() {
   setTimeout(refreshAll, 350);
   setTimeout(refreshAll, 1200);
 
-  // Калибровка при первом движении колеса мыши
-  window.addEventListener('wheel', refreshAll, { once: true, passive: true });
+
+
 }
 
 // Старт

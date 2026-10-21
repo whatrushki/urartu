@@ -23,7 +23,8 @@ function initContacts() {
                     delay: gsap.utils.random(0, 3),
                     ease: "sine.inOut",
                     repeat: -1,
-                    yoyo: true
+                    yoyo: true,
+                    paused: true
                 }
             )
         );

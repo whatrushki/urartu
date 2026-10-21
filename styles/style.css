@@ -78,7 +78,7 @@ section {
 .dances__card,
 .developers__column,
 .developers__team-image,
-.costumes__track {
+.costume__image {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     transform: translateZ(0);
@@ -130,11 +130,14 @@ section {
     height: 100%;
     pointer-events: none;
     z-index: 9999;
-    opacity: 0.15;
+    opacity: 0.12;
 
-    background-image: url("../assets/images/noise.gif");
+    background-image: url("../assets/images/noise-slow.gif");
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
     background-repeat: repeat;
-    background-size: 80px;
+    background-size: 180px;
 }
 
 .rights__block {
