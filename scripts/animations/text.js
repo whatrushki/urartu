@@ -712,15 +712,8 @@ function animateContactsText() {
 ========================================================= */
 
 function initTextAnimations() {
-    const isMobile = window.matchMedia('(max-width: 768px)').matches;
-
     // Вступительная анимация Hero (без ScrollTrigger, запускается один раз при старте)
     animateHeroText();
-
-    // На мобилках отключаем тяжелые ScrollTrigger-анимации на каждый абзац текста
-    if (isMobile) {
-        return;
-    }
 
     animateHistoryText();
 
